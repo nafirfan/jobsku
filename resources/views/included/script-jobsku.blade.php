@@ -1,0 +1,14 @@
+<script src="{{ asset('backend/js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{ asset('backend/js/jquery-ui.js')}}"></script>
+<script src="{{ asset('backend/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('backend/js/swiper-bundle.min.js')}}"></script>
+<script src="{{ asset('backend/js/jquery.nice-select.js')}}"></script>
+<script src="{{ asset('backend/js/jquery.fancybox.min.js')}}"></script>
+<script src="{{ asset('backend/js/slick.js')}}"></script>
+<script src="{{ asset('backend/js/summernote.min.js')}}"></script>
+<script src="{{ asset('backend/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{ asset('backend/js/counterup.js')}}"></script>
+<script src="{{ asset('backend/js/select2.min.js')}}"></script>
+<script src="{{ asset('backend/js/viewport.jquery.js')}}"></script>
+<script src="{{ asset('backend/js/jquery.nice-number.min.js')}}"></script>
+<script src="{{ asset('backend/js/main.js')}}"></script>
