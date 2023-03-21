@@ -29,7 +29,8 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email'],
+            'login' => ['required', 'string'],
+//            'email' => ['required', 'string', 'email'], // Make this field optional
             'password' => ['required', 'string'],
         ];
     }
@@ -55,8 +56,8 @@ class LoginRequest extends FormRequest
             ->orWhere('username', $this->login)
             ->first();
 
-        if (! $user || !Hash::check($this->password, $user->password)){
-            RateLimiter::clear($this->throttleKey());
+        if (!$user || !Hash::check($this->password, $user->password)){
+            RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
                 'login' => __('auth.failed'),
