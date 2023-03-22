@@ -126,7 +126,7 @@
                                                 <button class="primry-btn-2" type="submit">{{ __('Register') }}</button>
                                             </div>
                                         </div>
-                                        <h6>Already have an account? <a href="login.html"> Login</a> Here</h6>
+                                        <h6>Already have an account? <a href="{{ route('login') }}"> {{ __('Log in') }}</a> Here</h6>
                                     </div>
                                 </form>
                             </div>

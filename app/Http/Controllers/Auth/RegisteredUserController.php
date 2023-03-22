@@ -51,6 +51,6 @@ class RegisteredUserController extends Controller
         //  Comment to Disable auto login after registration
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::LOGIN);
+        return redirect(RouteServiceProvider::WELCOME);
     }
 }
