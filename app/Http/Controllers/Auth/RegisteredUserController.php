@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        //  Comment to Disable auto login after registration
+        //  Comment to Disable auto login after registration, but user must verify email
         Auth::login($user);
 
         return redirect(RouteServiceProvider::WELCOME);

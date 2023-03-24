@@ -24,7 +24,7 @@
             <div class="main-menu">
                 <div class="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
                     <div class="mobile-logo-wrap">
-                        {{--                        <a href="index.html"><img alt="image" src="{{ asset('backend/images/header1-logo.svg')}}"></a>--}}
+                                                <a href="index.html"><img alt="image" src="{{ asset('backend/images/header1-logo.svg')}}"></a>
                     </div>
                     <div class="menu-close-btn">
                         <i class="bi bi-x-lg"></i>
