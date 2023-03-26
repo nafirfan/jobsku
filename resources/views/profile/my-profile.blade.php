@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config('app.name') }} - Dashboard</title>
+    <title>{{ config('app.name') }} - My Profile</title>
     @include('included.css-jobsku')
 </head>
 
@@ -30,7 +29,7 @@
                         <div class="dashboard-menu">
                             <ul>
                                 <li>
-                                    <a class="active" href="dashboard.html">
+                                    <a href="dashboard.html">
                                         <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M7.125 6H1.125C0.50475 6 0 5.49525 0 4.875V1.125C0 0.50475 0.50475 0 1.125 0H7.125C7.74525 0 8.25 0.50475 8.25 1.125V4.875C8.25 5.49525 7.74525 6 7.125 6ZM1.125 0.75C0.91875 0.75 0.75 0.918 0.75 1.125V4.875C0.75 5.082 0.91875 5.25 1.125 5.25H7.125C7.33125 5.25 7.5 5.082 7.5 4.875V1.125C7.5 0.918 7.33125 0.75 7.125 0.75H1.125Z" />
@@ -45,7 +44,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="my-profile.html">
+                                    <a class="active" href="my-profile.html">
                                         <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M18 9C18 4.02595 13.9747 0 9 0C4.02599 0 0 4.02525 0 9C0 13.8465 3.87552 17.9204 8.85554 17.9982C8.94013 18.002 9.12386 17.9985 9.12741 17.9985C9.12888 17.9985 9.13514 17.9984 9.13679 17.9983C14.0497 17.9256 18 13.922 18 9ZM9 0.527344C13.6826 0.527344 17.4727 4.31677 17.4727 9C17.4727 10.9522 16.8164 12.8032 15.6091 14.3022C15.5881 13.3575 14.9755 12.5368 14.0707 12.2503L12.3649 11.7102C12.2684 11.6276 12.2938 11.6632 10.7234 10.8851V10.1543C11.4081 9.66815 11.8822 8.90072 11.9694 8.01584C12.2945 7.96071 12.5428 7.67707 12.5428 7.33655C12.5428 6.83149 12.5428 5.1711 12.5428 4.65304C12.5428 4.06216 12.0621 3.58147 11.4713 3.58147H11.4441C11.439 3.58147 11.4349 3.57736 11.4349 3.5723C11.4349 2.98143 10.9542 2.50073 10.3633 2.50073H7.57923C6.40856 2.50073 5.45618 3.45312 5.45618 4.62379C5.45618 4.7694 5.57423 4.88746 5.71985 4.88746C5.86547 4.88746 5.98352 4.7694 5.98352 4.62379C5.98352 3.74389 6.69934 3.02808 7.57923 3.02808H10.3633C10.6634 3.02808 10.9075 3.2722 10.9075 3.5723C10.9075 3.86814 11.1482 4.10882 11.4441 4.10882H11.4713C11.7714 4.10882 12.0155 4.35294 12.0155 4.65304V6.15357H11.7209C11.5563 6.15357 11.4224 6.01966 11.4224 5.8551V5.54745C11.4224 4.96266 10.8515 4.5501 10.2963 4.73361C9.46037 5.00991 8.53956 5.00998 7.70252 4.73347C7.14723 4.5501 6.57654 4.96266 6.57654 5.54734V5.8551C6.57654 6.0197 6.44263 6.15361 6.27806 6.15361H5.98349V5.84237C5.98349 5.69675 5.86543 5.5787 5.71982 5.5787C5.5742 5.5787 5.45614 5.69675 5.45614 5.84237V7.33658C5.45614 7.67714 5.70449 7.96075 6.02961 8.01591C6.11677 8.90082 6.59092 9.66821 7.27555 10.1544V10.8854C5.70839 11.662 5.7291 11.6293 5.63428 11.7105L3.92931 12.2503C3.02456 12.5368 2.41196 13.3575 2.39098 14.3023C1.18361 12.8032 0.527344 10.9522 0.527344 9C0.527344 4.3174 4.31677 0.527344 9 0.527344ZM5.97706 13.7489L6.18198 13.5444C6.39587 13.3309 6.44646 13.0069 6.30791 12.7383L5.98282 12.108L7.04827 11.5846C6.93489 12.0588 6.93858 12.58 6.99318 13.0684C6.99321 13.0688 6.99328 13.0692 6.99332 13.0695C7.12969 14.2874 7.62683 15.6689 8.12366 16.7889C7.30547 15.9655 6.21204 14.7544 5.93666 13.9148C5.9175 13.8565 5.933 13.7929 5.97706 13.7489ZM5.98345 6.68092H6.27803C6.73341 6.68092 7.10385 6.31044 7.10385 5.85506V5.5473C7.10385 5.32332 7.32203 5.16322 7.53813 5.23452C8.48081 5.5459 9.51912 5.54586 10.4618 5.23431C10.6754 5.16375 10.8951 5.32238 10.8951 5.54745V5.8551C10.8951 6.31048 11.2655 6.68092 11.7209 6.68092H12.0155V7.33655C12.0155 7.4257 11.943 7.4982 11.8538 7.4982C11.6417 7.4982 11.465 7.6647 11.4516 7.87729C11.3702 9.16734 10.2932 10.1779 8.99947 10.1779C7.70583 10.1779 6.62871 9.16734 6.54736 7.87729C6.53396 7.66473 6.35727 7.4982 6.14514 7.4982C6.05598 7.4982 5.98349 7.4257 5.98349 7.33655V6.68092H5.98345ZM8.99975 17.4124C8.82865 17.0692 8.5976 16.5802 8.36648 16.0129L8.79947 14.31H9.2005L9.6332 16.0124C9.40166 16.5809 9.17033 17.0703 8.99975 17.4124ZM8.65315 12.7027C8.50391 12.8274 8.19777 13.0831 7.95843 13.283C7.90847 13.3247 7.83693 13.3245 7.7875 13.2839L7.50881 12.9393C7.46272 12.4771 7.46729 11.9661 7.61164 11.5286L8.65315 12.7027ZM7.8724 13.8421C7.93962 13.8421 8.0068 13.8312 8.07173 13.8106L8.30679 14.1077L8.04125 15.1521C7.88917 14.7136 7.75206 14.2564 7.65127 13.8032C7.72267 13.8286 7.79737 13.8421 7.8724 13.8421ZM9.27341 13.7827H8.72205L8.5075 13.5115L9.02869 13.0761L9.50013 13.4792L9.27341 13.7827ZM10.0509 13.2563L9.40187 12.7014L10.3909 11.5383C10.5318 11.9728 10.5359 12.4761 10.4916 12.9287L10.2221 13.2589C10.1721 13.2992 10.1005 13.2988 10.0509 13.2563ZM8.99947 10.7052C9.42377 10.7052 9.82874 10.6153 10.1961 10.4538V10.9533L9.02644 12.3288L7.80286 10.9495V10.4537C8.17017 10.6153 8.57514 10.7052 8.99947 10.7052ZM9.95846 15.1513L9.69209 14.1033L9.93157 13.7828C9.99872 13.805 10.0684 13.8166 10.1381 13.8166C10.211 13.8166 10.2835 13.8038 10.3531 13.7798C10.2525 14.2379 10.1146 14.701 9.95846 15.1513ZM2.91727 14.8972V14.3523C2.91727 13.6176 3.38794 12.9748 4.08843 12.7531L5.49415 12.308C5.50821 12.3409 5.49376 12.3092 5.83924 12.9801C5.87211 13.0438 5.86013 13.1206 5.80943 13.1712L5.6045 13.3757C5.41877 13.5611 5.35402 13.8307 5.43558 14.0792C5.77213 15.1051 7.09611 16.5258 8.0048 17.4148C6.07549 17.1904 4.29476 16.3169 2.91727 14.8972ZM9.99461 17.4148C10.4846 16.9354 11.0989 16.2985 11.612 15.6535C11.7026 15.5395 11.6837 15.3737 11.5697 15.283C11.4558 15.1924 11.2899 15.2112 11.1992 15.3252C10.7852 15.8457 10.3012 16.3627 9.87465 16.7913C10.373 15.6684 10.872 14.2823 11.0071 13.0606C11.0071 13.0602 11.0072 13.0597 11.0072 13.0593C11.0608 12.5741 11.064 12.0574 10.9512 11.5846L12.0166 12.1081L11.6915 12.7384C11.553 13.007 11.6036 13.3309 11.8175 13.5444L12.0224 13.7489C12.0664 13.7929 12.0819 13.8565 12.0628 13.9148C12.0215 14.0408 11.9586 14.1822 11.876 14.3352C11.8067 14.4634 11.8545 14.6233 11.9826 14.6925C12.1108 14.7618 12.2707 14.714 12.3399 14.5859C12.4375 14.4053 12.5128 14.2348 12.5639 14.0792C12.6454 13.8306 12.5807 13.5611 12.3949 13.3757L12.19 13.1712C12.1393 13.1206 12.1274 13.0437 12.1602 12.9801C12.5031 12.314 12.4914 12.3403 12.5054 12.3079L13.9115 12.753C14.6121 12.9748 15.0827 13.6175 15.0827 14.3523V14.8972C13.7083 16.3137 11.9287 17.19 9.99461 17.4148Z" />
@@ -79,19 +78,6 @@
                                                 d="M13.3336 14.6006H2.03316C1.8358 14.6006 1.67578 14.7657 1.67578 14.9693C1.67578 15.1729 1.8358 15.338 2.03316 15.338H13.3336C13.5309 15.338 13.691 15.1729 13.691 14.9693C13.691 14.7657 13.5309 14.6006 13.3336 14.6006Z" />
                                         </svg>
                                         Bookmark Jobs
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="edit-profile.html">
-                                        <svg width="16" height="18" viewBox="0 0 16 18" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M13.82 1.24621H13.534V0.368701C13.534 0.165086 13.374 0 13.1767 0H8.00178C7.80442 0 7.6444 0.165086 7.6444 0.368701V1.24621H2.18003C1.10788 1.24621 0 1.83613 0 3.49529V15.7509C0 17.4101 1.12575 18 2.18003 18H13.82C14.8921 18 16 17.4101 16 15.7509V3.49898C16.0036 2.41131 15.4282 1.24621 13.82 1.24621ZM8.35916 0.737403H12.8193V7.20811L10.8179 5.47522C10.6848 5.3593 10.49 5.3593 10.3569 5.47522L8.35559 7.20811L8.35916 0.737403ZM13.8235 17.2626H2.18003C1.63323 17.2626 0.714764 17.0672 0.714764 15.7509V3.49898C0.714764 2.18271 1.63323 1.9873 2.18003 1.9873H7.6444V8.00819C7.64408 8.21181 7.80383 8.37717 8.0012 8.37749C8.08496 8.37763 8.16613 8.3474 8.2305 8.29209L10.5892 6.25317L12.9479 8.29209C13.0996 8.42243 13.3249 8.40123 13.4513 8.24476C13.5049 8.17835 13.5342 8.09461 13.534 8.00819V1.98361H13.82C15.0958 1.98361 15.2852 2.93118 15.2852 3.49529L15.2888 15.7509C15.2888 17.0672 14.3703 17.2626 13.8235 17.2626Z" />
-                                            <path d="M6.3003 4.52417H2.03316C1.8358 4.52417 1.67578 4.68926 1.67578 4.89287C1.67578 5.09649 1.8358 5.26157 2.03316 5.26157H6.3003C6.49767 5.26157 6.65768 5.09649 6.65768 4.89287C6.65768 4.68926 6.49767 4.52417 6.3003 4.52417Z" />
-                                            <path d="M6.3003 7.04224H2.03316C1.8358 7.04224 1.67578 7.20732 1.67578 7.41094C1.67578 7.61455 1.8358 7.77964 2.03316 7.77964H6.3003C6.49767 7.77964 6.65768 7.61455 6.65768 7.41094C6.65768 7.20732 6.49767 7.04224 6.3003 7.04224Z" />
-                                            <path d="M13.3336 9.5603H2.03316C1.8358 9.5603 1.67578 9.72539 1.67578 9.929C1.67578 10.1326 1.8358 10.2977 2.03316 10.2977H13.3336C13.5309 10.2977 13.691 10.1326 13.691 9.929C13.691 9.72539 13.5309 9.5603 13.3336 9.5603Z" />
-                                            <path d="M13.3336 12.0645H2.03316C1.8358 12.0645 1.67578 12.2295 1.67578 12.4332C1.67578 12.6368 1.8358 12.8019 2.03316 12.8019H13.3336C13.5309 12.8019 13.691 12.6368 13.691 12.4332C13.691 12.2295 13.5309 12.0645 13.3336 12.0645Z" />
-                                            <path d="M13.3336 14.6006H2.03316C1.8358 14.6006 1.67578 14.7657 1.67578 14.9693C1.67578 15.1729 1.8358 15.338 2.03316 15.338H13.3336C13.5309 15.338 13.691 15.1729 13.691 14.9693C13.691 14.7657 13.5309 14.6006 13.3336 14.6006Z" />
-                                        </svg>
-                                        Edit Resume
                                     </a>
                                 </li>
                                 <li>
@@ -185,381 +171,131 @@
                 </div>
             </div>
             <div class="col-lg-9">
-                <div class="dashboard-inner">
-                    <div class="author-area">
-                        <div class="author-img">
-                            <img src="{{ asset('backend/images/bg/author1.png')}}" alt="">
+                <div class="my-profile-inner">
+                    <div class="form-wrapper mb-60">
+                        <div class="section-title">
+                            <h5>My Profile</h5>
                         </div>
-                        <div class="author-content">
-                            <span>Hello, I’m</span>
-                            <h4>{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}</h4>
-                        </div>
-                    </div>
-                    <div class="counter-area">
-                        <div class="row g-lg-4 g-md-5 gy-5 justify-content-center">
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="counter-single">
-                                    <div class="counter-icon">
-                                        <img src="{{ asset('backend/images/icon/tt-applied.svg')}}" alt="image">
-                                    </div>
-                                    <div class="coundown">
-                                        <p>Total Applied</p>
-                                        <div class="d-flex align-items-center">
-                                            <h3 class="odometer">
-                                                250
-                                            </h3>
-                                            <span>+</span>
+                        <form class="profile-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-inner mb-25">
+                                        <label>First Name*</label>
+                                        <div class="input-area">
+                                            <img src="{{ asset('backend/images/icon/user-2.svg')}}" alt="">
+                                            <input type="text" placeholder="{{ old('firstname', $user->firstname) }}"
+                                                   value="{{ old('firstname', $user->firstname) }}">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="counter-single two">
-                                    <div class="counter-icon">
-                                        <img src="{{ asset('backend/images/icon/save-job.svg')}}" alt="image">
-                                    </div>
-                                    <div class="coundown">
-                                        <p>Saved Jobs</p>
-                                        <div class="d-flex align-items-center">
-                                            <h3 class="odometer">
-                                                150
-                                            </h3>
-                                            <span>+</span>
+                                <div class="col-md-6">
+                                    <div class="form-inner mb-25">
+                                        <label>Last Name*</label>
+                                        <div class="input-area">
+                                            <img src="{{ asset('backend/images/icon/user-2.svg')}}" alt="">
+                                            <input type="text" placeholder="{{ old('lastname', $user->lastname) }}"
+                                                   value="{{ old('lastname', $user->lastname) }}">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="counter-single three">
-                                    <div class="counter-icon">
-                                        <img src="{{ asset('backend/images/icon/massage.svg')}}" alt="image">
-                                    </div>
-                                    <div class="coundown">
-                                        <p>Message</p>
-                                        <div class="d-flex align-items-center">
-                                            <h3 class="odometer">
-                                                120
-                                            </h3>
-                                            <span>+</span>
+                                <div class="col-md-6">
+                                    <div class="form-inner mb-25">
+                                        <label>Current Location*</label>
+                                        <div class="input-area">
+                                            <img src="{{ asset('backend/images/icon/map-2.svg')}}" alt="">
+                                            <input type="text" placeholder="Mirpur, Dhaka">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="counter-single four">
-                                    <div class="counter-icon">
-                                        <img src="{{ asset('backend/images/icon/cv-review.svg')}}" alt="image">
-                                    </div>
-                                    <div class="coundown">
-                                        <p>Review CV</p>
-                                        <div class="d-flex align-items-center">
-                                            <h3 class="odometer">
-                                                500
-                                            </h3>
-                                            <span>+</span>
+                                <div class="col-md-6">
+                                    <div class="form-inner mb-25">
+                                        <label>Phone Number*</label>
+                                        <div class="input-area">
+                                            <img src="{{ asset('backend/images/icon/phone-2.svg')}}" alt="">
+                                            <input type="text" placeholder="+880-17 *** *** **">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-wrapper">
-                        <h5 class="title">Current Applied Jobs:</h5>
-                        <div class="scroll-table">
-                            <table class="eg-table table category-table mb-0">
-                                <thead>
-                                <tr>
-                                    <th>Job Tittle</th>
-                                    <th>Apply Date</th>
-                                    <th>Company</th>
-                                    <th>Status</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td data-label="Job Title">
-                                        <div class="company-info">
-                                            <div class="logo">
-                                                <img src="{{ asset('backend/images/bg/company-logo/company-06.png')}}" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="top">
-                                                    <h6><a href="job-details.html">Senior UI/UX Designer</a></h6>
-                                                    <span><img src="{{ asset('backend/images/icon/calender2.svg')}}" alt=""> 1 days ago</span>
-                                                </div>
-                                                <ul>
-                                                    <li><img src="{{ asset('backend/images/icon/location.svg')}}" alt="">New-York, USA</li>
-                                                    <li>
-                                                        <img src="{{ asset('backend/images/icon/arrow2.svg')}}" alt="">
-                                                        <p><span class="title">Salary:</span> $60-$90 / <span class="time">Per Hour</span></p>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                <div class="col-md-6">
+                                    <div class="form-inner mb-25">
+                                        <label>Email*</label>
+                                        <div class="input-area">
+                                            <img src="{{ asset('backend/images/icon/email-2.svg')}}" alt="">
+                                            <input type="email" placeholder="{{ old('email', $user->email) }}"
+                                                   value="{{ old('email', $user->email) }}">
                                         </div>
-                                    </td>
-                                    <td data-label="Apply Job">03/07/2022</td>
-                                    <td data-label="Company"><a class="view-btn" href="company-details.html">Tech.Bath Com... </a>
-                                    </td>
-                                    <td data-label="Status"><button class="eg-btn purple-btn">Viewed</button></td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Job Title">
-                                        <div class="company-info">
-                                            <div class="logo">
-                                                <img src="{{ asset('backend/images/bg/company-logo/company-02.png')}}" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="top">
-                                                    <h6><a href="job-details.html">React JS Developer</a></h6>
-                                                    <span><img src="{{ asset('backend/images/icon/calender2.svg')}}" alt=""> 1 days ago</span>
-                                                </div>
-                                                <ul>
-                                                    <li><img src="{{ asset('backend/images/icon/location.svg')}}" alt="">Dhaka, Bangladesh</li>
-                                                    <li>
-                                                        <img src="{{ asset('backend/images/icon/arrow2.svg')}}" alt="">
-                                                        <p><span class="title">Salary:</span> $80-$100 / <span class="time">Per Hour</span></p>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-inner mb-25">
+                                        <label>Username*</label>
+                                        <div class="input-area">
+                                            <img src="{{ asset('backend/images/icon/user-2.svg')}}" alt="">
+                                            <input type="text" placeholder="{{ old('username', $user->username) }}"
+                                                   value="{{ old('username', $user->username) }}">
                                         </div>
-                                    </td>
-                                    <td data-label="Apply Job">07/07/2022</td>
-                                    <td data-label="Company"><a class="view-btn" href="company-details.html">Gangster Group</a></td>
-                                    <td data-label="Status"><button class="eg-btn yellow-btn">Interview</button></td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Job Title">
-                                        <div class="company-info">
-                                            <div class="logo">
-                                                <img src="{{ asset('backend/images/bg/company-logo/company-03.png')}}" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="top">
-                                                    <h6><a href="job-details.html">WordPress Developer</a></h6>
-                                                    <span><img src="{{ asset('backend/images/icon/calender2.svg')}}" alt=""> 2 days ago</span>
-                                                </div>
-                                                <ul>
-                                                    <li><img src="{{ asset('backend/images/icon/location.svg')}}" alt="">West London, UK</li>
-                                                    <li>
-                                                        <img src="{{ asset('backend/images/icon/arrow2.svg')}}" alt="">
-                                                        <p><span class="title">Salary:</span> $30K-$40K / <span class="time">Monthly</span></p>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-inner mb-25">
+                                        <label>Current Job Place*</label>
+                                        <div class="input-area">
+                                            <img src="{{ asset('backend/images/icon/company-2.svg')}}" alt="">
+                                            <input type="text" placeholder="Company Name">
                                         </div>
-                                    </td>
-                                    <td data-label="Apply Job">10/07/2022</td>
-                                    <td data-label="Company"><a class="view-btn" href="company-details.html">Zoomly.Co Ltd</a></td>
-                                    <td data-label="Status"><button class="eg-btn orenge-btn">Canceled</button></td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Job Title">
-                                        <div class="company-info">
-                                            <div class="logo">
-                                                <img src="{{ asset('backend/images/bg/company-logo/company-04.png')}}" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="top">
-                                                    <h6><a href="job-details.html">Mern-Stack Developer</a></h6>
-                                                    <span><img src="{{ asset('backend/images/icon/calender2.svg')}}" alt=""> 1 week ago</span>
-                                                </div>
-                                                <ul>
-                                                    <li><img src="{{ asset('backend/images/icon/location.svg')}}" alt="">New-York, USA</li>
-                                                    <li>
-                                                        <img src="{{ asset('backend/images/icon/arrow2.svg')}}" alt="">
-                                                        <p><span class="title">Salary:</span> $20-$50 / <span class="time">Per Hour</span></p>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-inner mb-25">
+                                        <label>Designation*</label>
+                                        <div class="input-area">
+                                            <img src="{{ asset('backend/images/icon/designation-2.svg')}}" alt="">
+                                            <input type="text" placeholder="UI/UX Engineer">
                                         </div>
-                                    </td>
-                                    <td data-label="Apply Job">13/07/2022</td>
-                                    <td data-label="Company"><a class="view-btn" href="company-details.html">Marko-land Ltd</a></td>
-                                    <td data-label="Status"><button class="eg-btn purple-btn">Viewed</button></td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Job Title">
-                                        <div class="company-info">
-                                            <div class="logo">
-                                                <img src="{{ asset('backend/images/bg/company-logo/company-05.png')}}" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="top">
-                                                    <h6><a href="job-details.html">PHP Developer</a></h6>
-                                                    <span><img src="{{ asset('backend/images/icon/calender2.svg')}}" alt=""> 2 week ago</span>
-                                                </div>
-                                                <ul>
-                                                    <li><img src="{{ asset('backend/images/icon/location.svg')}}" alt="">New-York, USA</li>
-                                                    <li>
-                                                        <img src="{{ asset('backend/images/icon/arrow2.svg')}}" alt="">
-                                                        <p><span class="title">Salary:</span> $40K-$60K / <span class="time">Per Month</span>
-                                                        </p>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-inner mb-25">
+                                        <label>Qualification*</label>
+                                        <div class="input-area">
+                                            <img src="{{ asset('backend/images/icon/qualification-2.svg')}}" alt="">
+                                            <select class="select1">
+                                                <option value="0">Bachelor Degree in CSE</option>
+                                                <option value="1">IGCSE</option>
+                                                <option value="2">AS</option>
+                                                <option value="4">A Level</option>
+                                                <option value="5">Matriculated</option>
+                                            </select>
                                         </div>
-                                    </td>
-                                    <td data-label="Apply Job">18/08/2022</td>
-                                    <td data-label="Company"><a class="view-btn" href="company-details.html">Bistro.Tech Group</a>
-                                    </td>
-                                    <td data-label="Status"><button class="eg-btn green-btn">Success</button></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="featured-jobs-area">
-                    <div class="section-title">
-                        <h4>Featured Jobs:</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper feature-slider2">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="feature-card2">
-                            <div class="company-area">
-                                <span></span>
-                                <div class="logo">
-                                    <img src="{{ asset('backend/images/bg/company-logo/company-02.png')}}" alt="">
-                                </div>
-                                <div class="company-details">
-                                    <div class="name-location">
-                                        <h5><a href="job-details.html">UI/UX Engineer</a> <span>Full Time, Remote<span></span></span></h5>
-                                        <ul>
-                                            <li><a href="company-details.html">Norland Company</a></li>
-                                            <li class="verified"><img src="{{ asset('backend/images/icon/verified.svg')}}" alt=""> Verified Company</li>
-                                        </ul>
                                     </div>
-                                    <div class="bookmark">
-                                        <i class="bi bi-bookmark-fill"></i>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-inner mb-25">
+                                        <label>Language*</label>
+                                        <div class="input-area">
+                                            <img src="{{ asset('backend/images/icon/language-2.svg')}}" alt="">
+                                            <select class="select1">
+                                                <option value="0">Bangla</option>
+                                                <option value="1">English</option>
+                                                <option value="2">Spanish</option>
+                                                <option value="4">Italian</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-inner mb-50">
+                                        <label>Description*</label>
+                                        <textarea placeholder="Write something about yourself.........."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-inner">
+                                        <button class="primry-btn-2 lg-btn w-unset" type="submit">Update Profile</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="job-discription">
-                                <ul class="one">
-                                    <li>
-                                        <p><span class="title">Location:</span> Chicago, Australia</p>
-                                    </li>
-                                    <li>
-                                        <p><span class="title">Salary:</span> $90-$140 / <span class="time">Per Hour</span></p>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <p><span class="title">Experience:</span> 2-3 Years</p>
-                                    </li>
-                                    <li>
-                                        <p><span class="title">Deadline:</span><span class="time"> 3 February, 2023</span></p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="job-type-apply">
-                                <div class="apply-btn">
-                                    <a href="job-details.html"><span><img src="{{ asset('backend/images/icon/apply-ellipse.svg')}}"
-                                                                          alt=""></span>Apply Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="feature-card2">
-                            <div class="company-area">
-                                <span></span>
-                                <div class="logo">
-                                    <img src="{{ asset('backend/images/bg/company-logo/company-03.png')}}" alt="">
-                                </div>
-                                <div class="company-details">
-                                    <div class="name-location">
-                                        <h5><a href="job-details.html">React JS Developer</a> <span>Full Time, Remote<span></span></span>
-                                        </h5>
-                                        <ul>
-                                            <li><a href="company-details.html">UX.UI Company</a></li>
-                                            <li class="verified"><img src="{{ asset('backend/images/icon/verified.svg')}}" alt=""> Verified Company</li>
-                                        </ul>
-                                    </div>
-                                    <div class="bookmark">
-                                        <i class="bi bi-bookmark-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="job-discription">
-                                <ul class="one">
-                                    <li>
-                                        <p><span class="title">Location:</span> Dhaka, Bangladesh</p>
-                                    </li>
-                                    <li>
-                                        <p><span class="title">Salary:</span> $80K-$110K / <span class="time">Per Month</span></p>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <p><span class="title">Experience:</span> 2-3 Years</p>
-                                    </li>
-                                    <li>
-                                        <p><span class="title">Deadline:</span><span class="time"> 3 February, 2023</span></p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="job-type-apply">
-                                <div class="apply-btn">
-                                    <a href="job-details.html"><span><img src="{{ asset('backend/images/icon/apply-ellipse.svg')}}"
-                                                                          alt=""></span>Apply Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="feature-card2">
-                            <div class="company-area">
-                                <span></span>
-                                <div class="logo">
-                                    <img src="{{ asset('backend/images/bg/company-logo/company-04.png')}}" alt="">
-                                </div>
-                                <div class="company-details">
-                                    <div class="name-location">
-                                        <h5><a href="job-details.html">Receptionist</a> <span>Full Time, Part Time<span></span></span>
-                                        </h5>
-                                        <ul>
-                                            <li><a href="company-details.html">Germaine Group Ltd</a></li>
-                                            <li class="verified"><img src="{{ asset('backend/images/icon/verified.svg')}}" alt=""> Verified Company</li>
-                                        </ul>
-                                    </div>
-                                    <div class="bookmark">
-                                        <i class="bi bi-bookmark-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="job-discription">
-                                <ul class="one">
-                                    <li>
-                                        <p><span class="title">Location:</span> West London, Uk</p>
-                                    </li>
-                                    <li>
-                                        <p><span class="title">Salary:</span> $50K-$60K / <span class="time">Per Hour</span></p>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <p><span class="title">Experience:</span> 2-2.5 Years</p>
-                                    </li>
-                                    <li>
-                                        <p><span class="title">Deadline:</span><span class="time"> 4 February, 2023</span></p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="job-type-apply">
-                                <div class="apply-btn">
-                                    <a href="job-details.html"><span><img src="{{ asset('backend/images/icon/apply-ellipse.svg')}}"
-                                                                          alt=""></span>Apply Now</a>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -686,6 +422,4 @@
     </div>
 </footer>
 @include('included.script-jobsku')
-</body>
-
 </html>

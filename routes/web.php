@@ -25,12 +25,25 @@ use Illuminate\Support\Facades\Route;
 
 // Dashboard
 Route::get('/', [DashboardController::class, 'show'])
-    ->name('dashboard');
+    ->name('welcome');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->name('dashboard');
+
+    // My profile
+    Route::get('/profile', [ProfileController::class, 'myProfile'])
+        ->name('my.profile');
+
+    // Edit Resume
+    Route::get('/resume', [ProfileController::class, 'edit'])
+        ->name('profile.edit');
+    Route::patch('/resume', [ProfileController::class, 'update'])
+        ->name('profile.update');
+    Route::delete('/resume', [ProfileController::class, 'destroy'])
+        ->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';

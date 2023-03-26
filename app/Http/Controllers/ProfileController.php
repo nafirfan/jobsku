@@ -12,7 +12,7 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
     /**
-     * Display the user's profile form.
+     * Display the user's resume form.
      */
     public function edit(Request $request): View
     {
@@ -22,7 +22,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Update the user's profile information.
+     * Update the user's resume information.
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
@@ -56,5 +56,15 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    /**
+     * Display the user's profile form.
+     */
+    public function myProfile(Request $request): View
+    {
+        return view('profile.my-profile', [
+            'user' => $request->user(),
+        ]);
     }
 }
