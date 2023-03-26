@@ -2,7 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>{{ config('app.name') }} - Job Portal</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config('app.name') }} - {{ $title }}</title>
     @include('included.css-jobsku')
 </head>
 
@@ -1227,7 +1230,6 @@
         </div>
     </div>
 
-
     <footer class="footer1">
         <div class="container">
             <div class="row justify-content-center">
@@ -1262,7 +1264,8 @@
                                 <li><a href="job-listing2.html">Browse Jobs <i class='bx bx-up-arrow-alt'></i></a>
                                 </li>
                                 <li><a href="dashboard.html">Candidate Dashboard <i
-                                            class='bx bx-up-arrow-alt'></i></a></li>
+                                            class='bx bx-up-arrow-alt'></i></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
