@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,27 +25,40 @@ use Illuminate\Support\Facades\Route;
 //    return view('dashboard');
 //})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Dashboard
-Route::get('/', [DashboardController::class, 'show'])
-    ->name('welcome');
+// Home
+// Route::get('/', [DashboardController::class, 'show'])->name('welcome');
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/findJobs', [HomeController::class, 'jobList'])->name('home.findJobs');
+Route::get('/faq', [HomeController::class, 'faq'])->name('home.faq');
+Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
+
+Route::get('/companyList', [HomeController::class, 'companyList'])->name('home.companyList');
+Route::get('/companyDetails', [HomeController::class, 'companyDetails'])->name('home.companyDetails');
+Route::get('/jobList', [HomeController::class, 'jobList'])->name('home.jobList');
+Route::get('/jobDetails', [HomeController::class, 'jobDetails'])->name('home.jobDetails');
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    // candidate
+    Route::get('/dashboard', [CandidateController::class, 'dashboard'])->name('candidate.dashboard');
+    Route::get('/profile', [CandidateController::class, 'profile'])->name('candidate.profile');
+    Route::get('/appliedJobs', [CandidateController::class, 'appliedJobs'])->name('candidate.appliedJobs');
+    Route::get('/bookmarkJobs', [CandidateController::class, 'bookmarkJobs'])->name('candidate.bookmarkJobs');
+    Route::get('/settings', [CandidateController::class, 'settings'])->name('candidate.settings');
 
-    // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])
-        ->name('dashboard');
 
-    // My profile
-    Route::get('/profile', [ProfileController::class, 'myProfile'])
-        ->name('my.profile');
+    // company
+    Route::get('/dashboardCompany', [CompanyController::class, 'dashboard'])->name('company.dashboard');
+    Route::get('/jobListCompany', [CompanyController::class, 'jobList'])->name('company.jobList');
+    Route::get('/profileCompany', [CompanyController::class, 'profile'])->name('company.profile');
+    Route::get('/settingsCompany', [CompanyController::class, 'settings'])->name('company.settings');
+    Route::get('/jobDetailsCompany', [CompanyController::class, 'jobDetails'])->name('company.jobDetails');
+    Route::get('/jobPostCompany', [CompanyController::class, 'jobPost'])->name('company.jobPost');
+
 
     // Edit Resume
-    Route::get('/resume', [ProfileController::class, 'edit'])
-        ->name('profile.edit');
-    Route::patch('/resume', [ProfileController::class, 'update'])
-        ->name('profile.update');
-    Route::delete('/resume', [ProfileController::class, 'destroy'])
-        ->name('profile.destroy');
+    Route::get('/resume', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/resume', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/resume', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
