@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->id();
+            DB::statement('SET SESSION sql_require_primary_key=0');
+            $table->uuid('id')->primary();
+            $table->uuid('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('company_name');
+            $table->string('company_type');
             $table->timestamps();
         });
     }

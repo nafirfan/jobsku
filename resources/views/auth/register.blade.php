@@ -65,6 +65,7 @@
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="row">
+                                        <input type="hidden" id="role" name="role" value="1"/>
                                         <div class="col-md-6">
                                             <div class="form-inner mb-25">
                                                 <label for="firstname">{{ __('Firstname') }}*</label>
@@ -131,86 +132,102 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <form>
+                                <form method="POST" action="{{ route('register') }}">
+                                    @csrf
                                     <div class="row">
+                                        <input type="hidden" id="role" name="role" value="2"/>
                                         <div class="col-md-6">
                                             <div class="form-inner mb-25">
-                                                <label for="firstname">First Name*</label>
+                                                <label for="firstname">{{ __('Firstname') }}*</label>
                                                 <div class="input-area">
                                                     <img src="{{ asset('backend/images/icon/user-2.svg')}}" alt="">
-                                                    <input type="text" id="firstname" name="firstname" placeholder="Mr. Robert">
+                                                    <input type="text" id="firstname" name="firstname" value="{{ old('firstname') }}"
+                                                           placeholder="John" required autofocus/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-inner mb-25">
-                                                <label for="lastname">Last Name*</label>
+                                                <label for="lastname">{{ __('Lastname') }}*</label>
                                                 <div class="input-area">
                                                     <img src="{{ asset('backend/images/icon/user-2.svg')}}" alt="">
-                                                    <input type="text" id="lastname" name="lastname" placeholder="Jonson">
+                                                    <input type="text" id="lastname" name="lastname" value="{{ old('lastname') }}"
+                                                           placeholder="Nafi" required autofocus/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-inner mb-25">
-                                                <label for="username">User Name*</label>
+                                                <label for="username">{{ __('Username') }}*</label>
                                                 <div class="input-area">
                                                     <img src="{{ asset('backend/images/icon/user-2.svg')}}" alt="">
-                                                    <input type="text" id="username1" name="username" placeholder="robertjonson">
+                                                    <input type="text" id="username" name="username" value="{{ old('username') }}"
+                                                           placeholder="john_nafi" required autofocus/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-inner mb-25">
-                                                <label for="email">Email*</label>
+                                                <label for="email">{{ __('Email') }}*</label>
                                                 <div class="input-area">
                                                     <img src="{{ asset('backend/images/icon/email-2.svg')}}" alt="">
-                                                    <input type="text" id="email1" name="email" placeholder="info@example.com">
+                                                    <input type="email" id="email" name="email" placeholder="jnafi@example.com"
+                                                           value="{{ old('email') }}" required autofocus/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-inner mb-25">
-                                                <label for="companyname">Company Name*</label>
+                                                <label for="company_name">Company Name*</label>
                                                 <div class="input-area">
                                                     <img src="{{ asset('backend/images/icon/company-2.svg')}}" alt="">
-                                                    <input type="text" id="companyname" name="companyname" placeholder="Mr. Robert">
+                                                    <input type="text" id="company_name" name="company_name" placeholder="Google">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-inner mb-25">
-                                                <label>Company Type*</label>
+                                                <label for="company_type">Company Type*</label>
                                                 <div class="input-area">
                                                     <img src="{{ asset('backend/images/icon/category-2.svg')}}" alt="">
-                                                    <select class="select1">
-                                                        <option value="0">Digital Agency</option>
-                                                        <option value="1">Digital Marketing Agency</option>
-                                                        <option value="2">Software Company</option>
+                                                    <select name="company_type" id="company_type" class="select1">
+                                                        <option value="">Select Company Type</option>
+                                                        <option value="Startup">Startup</option>
+                                                        <option value="SaaS">SaaS (Software as a Service)</option>
+                                                        <option value="E-commerce">E-commerce</option>
+                                                        <option value="Social Media">Social Media</option>
+                                                        <option value="Mobile App Development">Mobile App Development</option>
+                                                        <option value="Web Development">Web Development</option>
+                                                        <option value="Gaming">Gaming</option>
+                                                        <option value="Artificial Intelligence (AI)">Artificial Intelligence (AI)</option>
+                                                        <option value="Internet of Things (IoT)">Internet of Things (IoT)</option>
+                                                        <option value="Cloud Computing">Cloud Computing</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-inner mb-25">
-                                                <label for="password">Password*</label>
-                                                <input type="password" name="password" id="password3" placeholder="Password" />
-                                                <i class="bi bi-eye-slash" id="togglePassword3"></i>
+                                                <label for="password">{{ __('Password') }}*</label>
+                                                <input type="password" name="password" id="password" placeholder="Password"
+                                                       required autocomplete="new-password" autofocus/>
+                                                <i class="bi bi-eye-slash" id="togglePassword"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-inner">
-                                                <label for="password4">Confirm Password*</label>
-                                                <input type="password" name="confirmpassword" id="password4" placeholder="Confirm Password" />
-                                                <i class="bi bi-eye-slash" id="togglePassword4"></i>
+                                                <label for="password_confirmation">{{ __('Confirm Password') }}*</label>
+                                                <input type="password" name="password_confirmation" id="password_confirmation"
+                                                       placeholder="Confirm Password" required autofocus/>
+                                                <i class="bi bi-eye-slash" id="togglePassword2"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-inner">
-                                                <button class="primry-btn-2" type="submit">Sign Up</button>
+                                                <button class="primry-btn-2" type="submit">{{ __('Register') }}</button>
                                             </div>
                                         </div>
-                                        <h6>Already have an account? <a href="login.html"> Login</a> Here</h6>
+                                        <h6>Already have an account? <a href="{{ route('login') }}"> {{ __('Log in') }}</a> Here</h6>
                                     </div>
                                 </form>
                             </div>
