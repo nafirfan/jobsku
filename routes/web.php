@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ContactUsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/findJobs', [HomeController::class, 'jobList'])->name('home.findJobs');
 Route::get('/faq', [HomeController::class, 'faq'])->name('home.faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
+Route::post('/contact', [ContactUsController::class, 'store'])->name('contact.store');
 
 Route::get('/companyList', [HomeController::class, 'companyList'])->name('home.companyList');
 Route::get('/companyDetails', [HomeController::class, 'companyDetails'])->name('home.companyDetails');
