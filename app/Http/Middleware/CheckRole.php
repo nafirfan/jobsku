@@ -21,7 +21,7 @@ class CheckRole
             ];
 
         if (!in_array(auth()->user()->role, $roles[$role])){
-            abort(403, 'Unauthorized action for this user.' . $role);
+            abort(403, 'Unauthorized action.' );
         }
         return $next($request);
     }

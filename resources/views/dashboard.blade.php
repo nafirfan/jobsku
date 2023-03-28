@@ -15,7 +15,7 @@
 
 <header class="header-area style-2">
     <div class="header-main-logo d-lg-block d-none">
-        <a href="{{ route('welcome') }}"><img alt="image" src="{{ asset('backend/images/header1-logo.svg')}}"></a>
+        <a href="{{ route('home.index') }}"><img alt="image" src="{{ asset('backend/images/header1-logo.svg')}}"></a>
     </div>
     @include('included.topbar')
 </header>

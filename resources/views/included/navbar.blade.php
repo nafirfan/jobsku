@@ -70,7 +70,7 @@
                     <div class="user-card dropdown-menu" aria-labelledby="dropdownMenuButton3">
                         <ul>
                             <li>
-                                <a href="{{ route('candidate.dashboard') }}">
+                                <a href="{{ route('profile.edit') }}">
                                     <svg width="18" height="18" viewBox="0 0 18 18"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
