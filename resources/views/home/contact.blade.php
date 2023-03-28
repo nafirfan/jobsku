@@ -127,15 +127,31 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div> <br>
+                    @endif
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @endif
                     <div class="contact-form form-wrapper">
-                        <form>
+                        <form method="POST" action="{{ route('contact.store') }}">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-inner mb-25">
                                         <label for="name">Your Name*</label>
                                         <div class="input-area">
                                             <img src="assets/images/icon/user-2.svg" alt="">
-                                            <input type="text" id="name" name="name"
+                                            <input type="text" id="name" name="nama"
                                                 placeholder="Mr. Jackson Mile">
                                         </div>
                                     </div>
@@ -145,7 +161,7 @@
                                         <label for="email">Email*</label>
                                         <div class="input-area">
                                             <img src="assets/images/icon/email-2.svg" alt="">
-                                            <input type="text" id="email" name="email"
+                                            <input type="email" id="email" name="email"
                                                 placeholder="info@example.com">
                                         </div>
                                     </div>
@@ -155,7 +171,7 @@
                                         <label for="phonenumber">Phone*</label>
                                         <div class="input-area">
                                             <img src="assets/images/icon/phone-2.svg" alt="">
-                                            <input type="text" id="phonenumber" name="phonenumber"
+                                            <input type="text" id="phonenumber" name="noHp"
                                                 placeholder="+880-17 *** *** **">
                                         </div>
                                     </div>
@@ -165,7 +181,7 @@
                                         <label for="jobplace">Company Name (Optional)</label>
                                         <div class="input-area">
                                             <img src="assets/images/icon/company-2.svg" alt="">
-                                            <input type="text" id="jobplace" name="jobplace"
+                                            <input type="text" id="jobplace" name="company"
                                                 placeholder="Company Name">
                                         </div>
                                     </div>
@@ -173,7 +189,7 @@
                                 <div class="col-md-12">
                                     <div class="form-inner mb-40">
                                         <label for="description">Message</label>
-                                        <textarea name="description" id="description" placeholder="Message..."></textarea>
+                                        <textarea name="pesan" id="description" placeholder="Message..."></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">

@@ -26,12 +26,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-content text-center">
-                        <h1>FAQ’s</h1>
+                        <h1>{{ $title }}</h1>
                         <span></span>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ $title }}</li>
                             </ol>
                         </nav>
                     </div>
