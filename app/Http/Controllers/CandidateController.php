@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCandidateRequest;
 use App\Http\Requests\UpdateCandidateRequest;
+use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\Candidate;
 
-use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,11 +43,11 @@ class CandidateController extends Controller
         return view('candidate.bookmarkJobs', $data);
     }
 
-    public function settings()
-    {
-        $data['title'] = 'Settings';
-        return view('candidate.settings', $data);
-    }
+//    public function settings()
+//    {
+//        $data['title'] = 'Settings';
+//        return view('candidate.settings', $data);
+//    }
 
     /**
      * Show the form for creating a new resource.
