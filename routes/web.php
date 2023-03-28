@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 
 // Home
 // Route::get('/', [DashboardController::class, 'show'])->name('welcome');
+
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/findJobs', [HomeController::class, 'jobList'])->name('home.findJobs');
 Route::get('/faq', [HomeController::class, 'faq'])->name('home.faq');
@@ -46,6 +48,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/appliedJobs', [CandidateController::class, 'appliedJobs'])->name('candidate.appliedJobs');
     Route::get('/bookmarkJobs', [CandidateController::class, 'bookmarkJobs'])->name('candidate.bookmarkJobs');
     Route::get('/settings', [CandidateController::class, 'settings'])->name('candidate.settings');
+    Route::post('/settings', [UserController::class, 'updatePassword'])->name('user.updatePassword');
 
 
     // company
@@ -53,8 +56,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/jobListCompany', [CompanyController::class, 'jobList'])->name('company.jobList');
     Route::get('/profileCompany', [CompanyController::class, 'profile'])->name('company.profile');
     Route::get('/settingsCompany', [CompanyController::class, 'settings'])->name('company.settings');
+    Route::post('/settingsCompany', [UserController::class, 'updatePassword'])->name('user.updatePassword');
     Route::get('/jobDetailsCompany', [CompanyController::class, 'jobDetails'])->name('company.jobDetails');
     Route::get('/jobPostCompany', [CompanyController::class, 'jobPost'])->name('company.jobPost');
+
 
 
     // Edit Resume
