@@ -20,7 +20,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-inner mb-25">
                                 <label>Last Name*</label>
                                 <div class="input-area">
@@ -28,6 +28,17 @@
                                     <input type="text" placeholder="{{ old('lastname', $user->lastname) }}"
                                            value="{{ old('lastname', $user->lastname) }}">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-2 col-lg-12 position-relative">
+                            <div class="drag-area active">
+                                <p>Upload Images</p>
+                                <button type="button" class="upload-btn">
+                                    <i class="bi bi-plus-lg"></i>
+                                </button>
+                                <img src="https://{{ Storage::disk('Wasabi')->url('c343765-a/jobsku/users/profiles/').$user->img_profile }}"
+                                     class="card-img" alt="img_profile">
+                                <input type="file" id="img_profile" name="profile_picture" hidden>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -132,4 +143,8 @@
             </div>
         </div>
     </div>
+@stop
+
+@section('additional-script')
+    <script src="{{ asset('backend/js/drop-zone.js')}}"></script>
 @stop

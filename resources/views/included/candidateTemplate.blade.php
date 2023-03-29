@@ -159,6 +159,7 @@
         </div>
     </footer>
     @include('included.script-jobsku')
+    @yield('additional-script')
 </body>
 
 </html>
