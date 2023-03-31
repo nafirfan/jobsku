@@ -33,8 +33,22 @@ class RegisteredUserController extends Controller
      */
     public function store(RegisterRequest $request): RedirectResponse
     {
+// develop
+
+        $request->validate([
+            'firstname' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:30', 'unique:' . User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'role' => ['required', 'string', 'in:1,2'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        if ($request->role == "1") {
+//
         if($request->role == "1")
         {
+// develop
             $user = User::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
@@ -46,10 +60,20 @@ class RegisteredUserController extends Controller
             event(new Registered($user));
             Auth::login($user);
 
+// develop
+            return redirect(RouteServiceProvider::WELCOME);
+        } else if ($request->role == "2") {
+            $request->validate([
+                'company_name' => ['required', 'string', 'max:255'],
+                'company_type' => ['required', 'string', 'max:255'],
+            ]);
+
+///
             return redirect(RouteServiceProvider::WELCOME,
                 with('Please confirm your email address before getting started.'));
         }else if ($request->role == "2")
         {
+// develop
             $user = User::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
@@ -60,8 +84,8 @@ class RegisteredUserController extends Controller
             ]);
 
             $company = Company::create([
-                'company_name' => $request->company_name,
-                'company_type' => $request->company_type,
+                'name' => $request->company_name,
+                'type' => $request->company_type,
                 'user_id' => $user->id,
             ]);
 
