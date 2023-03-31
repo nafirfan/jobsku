@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,10 +99,10 @@
                         <div class="app-list">
                             <ul>
                                 <li>
-                                    <a href="#"><img src="../assets/images/icon/apple-app.svg" alt=""></a>
+                                    <a href="#"><img src="{{ asset('backend/images/icon/apple-app.svg') }}" alt=""></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="../assets/images/icon/google-play.svg"
+                                    <a href="#"><img src="{{ asset('backend/images/icon/google-play.svg') }}"
                                             alt=""></a>
                                 </li>
                             </ul>
@@ -116,7 +115,7 @@
                     <div class="col-lg-6 d-flex justify-content-lg-start justify-content-center">
                         <div class="support">
                             <div class="icon">
-                                <img src="../assets/images/icon/footer-support-icon.svg" alt="">
+                                <img src="{{ asset('backend/images/icon/footer-support-icon.svg') }}" alt="">
                             </div>
                             <div class="content">
                                 <h5>Support Line:</h5>
@@ -161,5 +160,4 @@
     @include('included.script-jobsku')
     @yield('additional-script')
 </body>
-
 </html>

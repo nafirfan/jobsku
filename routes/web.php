@@ -28,16 +28,16 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact')
 Route::post('/contact', [ContactUsController::class, 'store'])->name('contact.store');
 
 // Company and Job
-Route::get('/jobs', [HomeController::class, 'jobList'])->name('home.jobList');
-Route::get('/jobs/{id}', [HomeController::class, 'jobDetails'])->name('home.jobDetails');
-Route::get('/companies', [HomeController::class, 'companyList'])->name('home.companyList');
-Route::get('/companies/{id}', [HomeController::class, 'companyDetails'])->name('home.companyDetails');
+Route::get('/jobs', [HomeController::class, 'jobList'])->name('home.jobs');
+Route::get('/jobs/{id}', [HomeController::class, 'jobDetails'])->name('home.job.details');
+Route::get('/companies', [HomeController::class, 'companyList'])->name('home.companies');
+Route::get('/companies/{id}', [HomeController::class, 'companyDetails'])->name('home.company.details');
 
 
 // Default for all roles
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::post('/settings', [UserController::class, 'updatePassword'])->name('user.updatePassword');
 });

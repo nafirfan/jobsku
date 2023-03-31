@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="company-details">
                                         <div class="top">
-                                            <h6><a href="{{ route('home.jobDetails') }}">Senior UI/UX Designer</a></h6>
+                                            <h6><a href="{{ route('home.jobs') }}">Senior UI/UX Designer</a></h6>
                                             <span><img src="../assets/images/icon/calender2.svg" alt=""> 1 days
                                                 ago</span>
                                         </div>
@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="company-details">
                                         <div class="top">
-                                            <h6><a href="{{ route('home.jobDetails') }}">React JS Developer</a></h6>
+                                            <h6><a href="{{ route('home.jobs') }}">React JS Developer</a></h6>
                                             <span><img src="../assets/images/icon/calender2.svg" alt=""> 1 days
                                                 ago</span>
                                         </div>
@@ -76,7 +76,7 @@
                             </td>
                             <td data-label="Deadline">07/07/2022</td>
                             <td data-label="Company"><a class="company-btn"
-                                    href="{{ route('home.companyDetails') }}">Gangster Group</a>
+                                    href="{{ route('home.companies') }}">Gangster Group</a>
                             </td>
                             <td data-label="Action"><button class="view-btn">Apply Now</button></td>
                         </tr>
@@ -88,7 +88,7 @@
                                     </div>
                                     <div class="company-details">
                                         <div class="top">
-                                            <h6><a href="{{ route('home.jobDetails') }}">WordPress Developer</a></h6>
+                                            <h6><a href="{{ route('home.jobs') }}">WordPress Developer</a></h6>
                                             <span><img src="../assets/images/icon/calender2.svg" alt=""> 2 days
                                                 ago</span>
                                         </div>
@@ -106,7 +106,7 @@
                             </td>
                             <td data-label="Deadline">10/07/2022</td>
                             <td data-label="Company"><a class="company-btn"
-                                    href="{{ route('home.companyDetails') }}">Zoomly.Co Ltd</a>
+                                    href="{{ route('home.companies') }}">Zoomly.Co Ltd</a>
                             </td>
                             <td data-label="Action"><button class="view-btn">Apply Now</button></td>
                         </tr>
@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="company-details">
                                         <div class="top">
-                                            <h6><a href="{{ route('home.jobDetails') }}">Mern-Stack Developer</a></h6>
+                                            <h6><a href="{{ route('home.jobs') }}">Mern-Stack Developer</a></h6>
                                             <span><img src="../assets/images/icon/calender2.svg" alt=""> 1 week
                                                 ago</span>
                                         </div>
@@ -136,7 +136,7 @@
                             </td>
                             <td data-label="Deadline">13/07/2022</td>
                             <td data-label="Company"><a class="company-btn"
-                                    href="{{ route('home.companyDetails') }}">Marko-land Ltd</a>
+                                    href="{{ route('home.companies') }}">Marko-land Ltd</a>
                             </td>
                             <td data-label="Action"><button class="view-btn">Apply Now</button></td>
                         </tr>
@@ -148,7 +148,7 @@
                                     </div>
                                     <div class="company-details">
                                         <div class="top">
-                                            <h6><a href="{{ route('home.jobDetails') }}">PHP Developer</a></h6>
+                                            <h6><a href="{{ route('home.jobs') }}">PHP Developer</a></h6>
                                             <span><img src="../assets/images/icon/calender2.svg" alt=""> 2 week
                                                 ago</span>
                                         </div>
@@ -166,7 +166,7 @@
                             </td>
                             <td data-label="Deadline">18/08/2022</td>
                             <td data-label="Company"><a class="company-btn"
-                                    href="{{ route('home.companyDetails') }}">Bistro.Tech
+                                    href="{{ route('home.companies') }}">Bistro.Tech
                                     Group</a>
                             </td>
                             <td data-label="Action"><button class="view-btn">Apply Now</button></td>

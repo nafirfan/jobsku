@@ -20,7 +20,6 @@
     @include('included.topbar')
 </header>
 
-
 <div class="dashboard-area pt-120 mb-120">
     <div class="container">
         <div class="row g-lg-4 gy-5 mb-90">
@@ -687,5 +686,4 @@
 </footer>
 @include('included.script-jobsku')
 </body>
-
 </html>

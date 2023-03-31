@@ -24,10 +24,9 @@ class CandidateController extends Controller
         return view('candidate.dashboard', $data);
     }
 
-    public function profile(Request $request): View
+    public function profile(): View
     {
         $data['title'] = 'Profile';
-        $data['user'] = $request->user();
         return view('candidate.profile', $data);
     }
 

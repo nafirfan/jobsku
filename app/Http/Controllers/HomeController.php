@@ -20,25 +20,25 @@ class HomeController extends Controller
     public function companyList()
     {
         $data['title'] = 'Company List';
-        return view('home.companyList', $data);
+        return view('home.companies', $data);
     }
 
     public function companyDetails()
     {
         $data['title'] = 'Company Details';
-        return view('home.companyDetails', $data);
+        return view('home.company.details', $data);
     }
 
     public function jobList()
     {
         $data['title'] = 'Job List';
-        return view('home.jobList', $data);
+        return view('home.jobs', $data);
     }
 
     public function jobDetails()
     {
         $data['title'] = 'Job Details';
-        return view('home.jobDetails', $data);
+        return view('home.job.details', $data);
     }
 
     public function faq()

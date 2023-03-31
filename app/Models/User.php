@@ -13,6 +13,10 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+//    protected $append = [
+//        'img_profile',
+//    ];
+
     /**
      * The attributes that are mass assignable.
      *

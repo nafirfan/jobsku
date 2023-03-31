@@ -66,7 +66,7 @@
                                             <input type="text" id=login" name="login" value="{{ old('login') }}"
                                                 placeholder="info@example.com" required autofocus />
                                             <ul class="mt-2">
-                                                @foreach ($errors->get('password') as $error)
+                                                @foreach ($errors->get('login') as $error)
                                                     <li>{{ $error }}</li>
                                                 @endforeach
                                             </ul>

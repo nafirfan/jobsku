@@ -65,7 +65,11 @@
                 <div class="btn-group dropdown">
                     <div class="notifications-area dropdown-toggle" role="button" id="dropdownMenuButton3"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="user-icon" src="{{ asset('backend/images/bg/user-img.png') }}" alt="">
+                        @if(Auth::Check())
+                            <img class="user-icon" width="40" height="40" src="https://{{ Storage::disk('Wasabi')->url('c343765-a/jobsku/users/profiles/').Auth()->user()->img_profile }}" alt="">
+                        @else
+                            <img class="user-icon" width="40" height="40" src="https://{{ Storage::disk('Wasabi')->url('c343765-a/jobsku/users/profiles/')}}default.png" alt="">
+                        @endif
                     </div>
                     <div class="user-card dropdown-menu" aria-labelledby="dropdownMenuButton3">
                         <ul>

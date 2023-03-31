@@ -8,7 +8,9 @@
                 <div class="section-title">
                     <h5>My Profile</h5>
                 </div>
-                <form class="profile-form">
+                <form method="POST" class="profile-form" action="{{ route('profile.update') }}" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-inner mb-25">
@@ -16,7 +18,7 @@
                                 <div class="input-area">
                                     <img src="{{ asset('backend/images/icon/user-2.svg') }}" alt="">
                                     <input type="text" placeholder="{{ old('firstname', $user->firstname) }}"
-                                           value="{{ old('firstname', $user->firstname) }}">
+                                           value="{{ old('firstname', $user->firstname) }}" name="firstname">
                                 </div>
                             </div>
                         </div>
@@ -26,37 +28,18 @@
                                 <div class="input-area">
                                     <img src="{{ asset('backend/images/icon/user-2.svg') }}" alt="">
                                     <input type="text" placeholder="{{ old('lastname', $user->lastname) }}"
-                                           value="{{ old('lastname', $user->lastname) }}">
+                                           value="{{ old('lastname', $user->lastname) }}" name="lastname">
                                 </div>
                             </div>
                         </div>
                         <div class="col-xxl-2 col-lg-12 position-relative">
-                            <div class="drag-area active">
+                            <div class="drag-area">
                                 <p>Upload Images</p>
                                 <button type="button" class="upload-btn">
                                     <i class="bi bi-plus-lg"></i>
                                 </button>
-                                <img src="https://{{ Storage::disk('Wasabi')->url('c343765-a/jobsku/users/profiles/').$user->img_profile }}"
-                                     class="card-img" alt="img_profile">
-                                <input type="file" id="img_profile" name="profile_picture" hidden>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-inner mb-25">
-                                <label>Current Location*</label>
-                                <div class="input-area">
-                                    <img src="{{ asset('backend/images/icon/map-2.svg') }}" alt="">
-                                    <input type="text" placeholder="Mirpur, Dhaka">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-inner mb-25">
-                                <label>Phone Number*</label>
-                                <div class="input-area">
-                                    <img src="{{ asset('backend/images/icon/phone-2.svg') }}" alt="">
-                                    <input type="text" placeholder="+880-17 *** *** **">
-                                </div>
+                                <input type="file" id="img_profile" name="img_profile" hidden>
+                                <div class="image-preview"></div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -65,7 +48,7 @@
                                 <div class="input-area">
                                     <img src="{{ asset('backend/images/icon/email-2.svg') }}" alt="">
                                     <input type="email" placeholder="{{ old('email', $user->email) }}"
-                                           value="{{ old('email', $user->email) }}">
+                                           value="{{ old('email', $user->email) }}" name="email" disabled>
                                 </div>
                             </div>
                         </div>
@@ -75,69 +58,62 @@
                                 <div class="input-area">
                                     <img src="{{ asset('backend/images/icon/user-2.svg') }}" alt="">
                                     <input type="text" placeholder="{{ old('username', $user->username) }}"
-                                           value="{{ old('username', $user->username) }}">
+                                           value="{{ old('username', $user->username) }}" name="username" disabled>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-inner mb-25">
-                                <label>Current Job Place*</label>
+                                <label>Current Location</label>
+                                <div class="input-area">
+                                    <img src="{{ asset('backend/images/icon/map-2.svg') }}" alt="">
+                                    <input type="text" placeholder="{{ old('location', $user->location) }}"
+                                           value="{{ old('location', $user->location) }}" name="location">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-inner mb-25">
+                                <label>Phone Number</label>
+                                <div class="input-area">
+                                    <img src="{{ asset('backend/images/icon/phone-2.svg') }}" alt="">
+                                    <input type="text" placeholder="{{ old('phone', $user->phone) }}"
+                                           value="{{ old('phone', $user->phone) }}" name="phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-inner mb-25">
+                                <label>Current Job Place</label>
                                 <div class="input-area">
                                     <img src="{{ asset('backend/images/icon/company-2.svg') }}" alt="">
-                                    <input type="text" placeholder="Company Name">
+                                    <input type="text" placeholder="{{ old('current_job', $user->current_job) }}"
+                                           value="{{ old('current_job', $user->current_job) }}" name="current_job">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-inner mb-25">
-                                <label>Designation*</label>
+                                <label>Designation</label>
                                 <div class="input-area">
                                     <img src="{{ asset('backend/images/icon/designation-2.svg') }}" alt="">
-                                    <input type="text" placeholder="UI/UX Engineer">
+                                    <input type="text" placeholder="{{ old('designation', $user->designation) }}"
+                                           value="{{ old('designation', $user->designation) }}" name="designation">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-inner mb-25">
-                                <label>Qualification*</label>
-                                <div class="input-area">
-                                    <img src="{{ asset('backend/images/icon/qualification-2.svg') }}" alt="">
-                                    <select class="select1">
-                                        <option value="0">Bachelor Degree in CSE</option>
-                                        <option value="1">IGCSE</option>
-                                        <option value="2">AS</option>
-                                        <option value="4">A Level</option>
-                                        <option value="5">Matriculated</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-inner mb-25">
-                                <label>Language*</label>
-                                <div class="input-area">
-                                    <img src="{{ asset('backend/images/icon/language-2.svg') }}" alt="">
-                                    <select class="select1">
-                                        <option value="0">Bangla</option>
-                                        <option value="1">English</option>
-                                        <option value="2">Spanish</option>
-                                        <option value="4">Italian</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-inner mb-50">
-                                <label>Description*</label>
-                                <textarea placeholder="Write something about yourself.........."></textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
+                        <div class="col-md-3">
                             <div class="form-inner">
                                 <button class="primry-btn-2 lg-btn w-unset" type="submit">Update
                                     Profile</button>
                             </div>
                         </div>
+                        @if (session('status'))
+                            <div class="col-md-4 alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
                     </div>
                 </form>
             </div>
@@ -146,5 +122,14 @@
 @stop
 
 @section('additional-script')
+    <script>
+        function handleFileChange() {
+            if (!this.value) return;
+
+            file = this.files[0];
+            dropArea.classList.add("active");
+            showFile();
+        }
+    </script>
     <script src="{{ asset('backend/js/drop-zone.js')}}"></script>
 @stop
