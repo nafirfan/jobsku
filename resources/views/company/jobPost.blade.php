@@ -18,7 +18,7 @@
                                     <div class="form-inner mb-25">
                                         <label for="jobtitle">Job Title*</label>
                                         <div class="input-area">
-                                            <img src="../assets/images/icon/company-2.svg" alt="">
+                                            <img src="{{ asset('backend/images/icon/company-2.svg') }}" alt="">
                                             <input type="text" id="jobtitle" name="jobtitle"
                                                 placeholder="Senior UI/UX Engineer">
                                         </div>
@@ -28,7 +28,7 @@
                                     <div class="form-inner mb-25">
                                         <label>Job Category*</label>
                                         <div class="input-area">
-                                            <img src="../assets/images/icon/category-2.svg" alt="">
+                                            <img src="{{ asset('backend/images/icon/category-2.svg') }}" alt="">
                                             <select class="select1">
                                                 <option value="0">UI/UX Designer</option>
                                                 <option value="1">Font End Developer</option>
@@ -42,7 +42,7 @@
                                     <div class="form-inner mb-25">
                                         <label for="vacancies">Vacancies*</label>
                                         <div class="input-area">
-                                            <img src="../assets/images/icon/user-2.svg" alt="">
+                                            <img src=".{{ asset('backend/images/icon/user-2.svg') }}" alt="">
                                             <input type="text" id="vacancies" name="vacancies" placeholder="07 Person">
                                         </div>
                                     </div>
@@ -72,7 +72,8 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="input-area  mb-25" id="fixedPrice">
-                                                    <img src="../assets/images/icon/salary-2.svg" alt="">
+                                                    <img src=".{{ asset('backend/images/icon/salary-2.svg') }}"
+                                                        alt="">
                                                     <input type="text" name="job_fixed_price" placeholder="Salary" />
                                                 </div>
                                             </div>
@@ -81,7 +82,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 mb-25">
                                                             <div class="input-area">
-                                                                <img src="../assets/images/icon/salary-2.svg"
+                                                                <img src=".{{ asset('backend/images/icon/salary-2.svg') }}"
                                                                     alt="">
                                                                 <input type="text" name="job_range_price_one"
                                                                     placeholder="Max Salary" />
@@ -89,7 +90,7 @@
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="input-area">
-                                                                <img src="../assets/images/icon/salary-2.svg"
+                                                                <img src="{{ asset('backend/images/icon/salary-2.svg') }}"
                                                                     alt="">
                                                                 <input type="text" name="job_range_price_two"
                                                                     placeholder="Min Salary" />
