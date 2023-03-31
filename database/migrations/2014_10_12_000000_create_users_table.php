@@ -13,13 +13,19 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             DB::statement('SET SESSION sql_require_primary_key=0');
-//            $table->uuid('id')->primary();
             $table->uuid('id');
             $table->primary('id');
-            $table->string('name');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('location')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('current_job')->nullable();
+            $table->string('designation')->nullable();
+            $table->string('img_profile')->default('default.png');
             $table->rememberToken();
             $table->timestamps();
         });

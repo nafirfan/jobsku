@@ -10,6 +10,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Http\Requests\Auth\RegisterRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
@@ -30,8 +31,9 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(RegisterRequest $request): RedirectResponse
     {
+// develop
 
         $request->validate([
             'firstname' => ['required', 'string', 'max:255'],
@@ -43,6 +45,10 @@ class RegisteredUserController extends Controller
         ]);
 
         if ($request->role == "1") {
+//
+        if($request->role == "1")
+        {
+// develop
             $user = User::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
@@ -52,10 +58,9 @@ class RegisteredUserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
             event(new Registered($user));
-
-            //  Comment to Disable auto login after registration, but user must verify email
             Auth::login($user);
 
+// develop
             return redirect(RouteServiceProvider::WELCOME);
         } else if ($request->role == "2") {
             $request->validate([
@@ -63,6 +68,12 @@ class RegisteredUserController extends Controller
                 'company_type' => ['required', 'string', 'max:255'],
             ]);
 
+///
+            return redirect(RouteServiceProvider::WELCOME,
+                with('Please confirm your email address before getting started.'));
+        }else if ($request->role == "2")
+        {
+// develop
             $user = User::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
@@ -80,11 +91,10 @@ class RegisteredUserController extends Controller
 
             event(new Registered($user));
             event(new CompanyRegistered($company));
-
-            //  Comment to Disable auto login after registration, but user must verify email
             Auth::login($user);
 
-            return redirect(RouteServiceProvider::WELCOME);
+            return redirect(RouteServiceProvider::WELCOME,
+                with('Please confirm your email address before getting started.'));
         }
         return redirect('/register');
     }

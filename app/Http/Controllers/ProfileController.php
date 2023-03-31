@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -32,9 +33,18 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
+        $img_profile = $request->file('img_profile');
+        $img_profile?->storeAs('jobsku/users/profiles', $img_profile->hashName() ,'Wasabi');
+
+        // Save the additional fields
+        $request->user()->location = $request->location;
+        $request->user()->phone = $request->phone;
+        $request->user()->current_job = $request->current_job;
+        $request->user()->designation = $request->designation;
+        $request->user()->img_profile = $img_profile->hashName();
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return redirect()->route('profile.edit')->with('status', 'Profile updated successfully!');
     }
 
     /**

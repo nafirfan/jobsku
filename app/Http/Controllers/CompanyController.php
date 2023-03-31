@@ -29,11 +29,11 @@ class CompanyController extends Controller
         return view('company.profile', $data);
     }
 
-    public function settings()
-    {
-        $data['title'] = 'Settings';
-        return view('company.settings', $data);
-    }
+//    public function settings()
+//    {
+//        $data['title'] = 'Settings';
+//        return view('company.settings', $data);
+//    }
 
     public function jobDetails()
     {
