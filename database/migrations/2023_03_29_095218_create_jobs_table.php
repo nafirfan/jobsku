@@ -15,7 +15,9 @@ return new class extends Migration
             DB::statement('SET SESSION sql_require_primary_key=0');
             $table->uuid('id')->primary();
             $table->uuid('user_id');
+            $table->uuid('companies_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('companies_id')->references('id')->on('companies');
             $table->string('name');
             $table->string('location');
             $table->string('type');
@@ -26,7 +28,6 @@ return new class extends Migration
             $table->string('responsibilities');
             $table->string('educational_req');
             $table->integer('year_of_experience');
-            $table->string('extra_benefit');
             $table->string('gender');
             $table->integer('vacancy');
             $table->date('expiration_pub');

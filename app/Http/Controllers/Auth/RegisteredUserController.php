@@ -33,7 +33,7 @@ class RegisteredUserController extends Controller
      */
     public function store(RegisterRequest $request): RedirectResponse
     {
-// develop
+        // develop
 
         $request->validate([
             'firstname' => ['required', 'string', 'max:255'],
@@ -44,11 +44,10 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        // if ($request->role == "1") {
+        //
         if ($request->role == "1") {
-//
-        if($request->role == "1")
-        {
-// develop
+            // develop
             $user = User::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
@@ -60,7 +59,7 @@ class RegisteredUserController extends Controller
             event(new Registered($user));
             Auth::login($user);
 
-// develop
+            // develop
             return redirect(RouteServiceProvider::WELCOME);
         } else if ($request->role == "2") {
             $request->validate([
@@ -68,12 +67,13 @@ class RegisteredUserController extends Controller
                 'company_type' => ['required', 'string', 'max:255'],
             ]);
 
-///
-            return redirect(RouteServiceProvider::WELCOME,
-                with('Please confirm your email address before getting started.'));
-        }else if ($request->role == "2")
-        {
-// develop
+            ///
+            //     return redirect(
+            //         RouteServiceProvider::WELCOME,
+            //         with('Please confirm your email address before getting started.')
+            //     );
+            // } else if ($request->role == "2") {
+            // develop
             $user = User::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
@@ -93,9 +93,12 @@ class RegisteredUserController extends Controller
             event(new CompanyRegistered($company));
             Auth::login($user);
 
-            return redirect(RouteServiceProvider::WELCOME,
-                with('Please confirm your email address before getting started.'));
+            return redirect(
+                RouteServiceProvider::WELCOME,
+                with('Please confirm your email address before getting started.')
+            );
         }
         return redirect('/register');
+        // }
     }
 }

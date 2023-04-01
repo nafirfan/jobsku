@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\CompanyController;
@@ -54,9 +55,10 @@ Route::middleware(['auth', 'verified', 'role.check:candidate'])->group(function 
 Route::prefix('company')->middleware(['auth', 'verified', 'role.check:company'])->group(function () {
     Route::get('/dashboard', [CompanyController::class, 'dashboard'])->name('company.dashboard');
     Route::get('/profile', [CompanyController::class, 'profile'])->name('company.profile');
-    Route::get('/jobList', [CompanyController::class, 'jobList'])->name('company.jobList');
-    Route::get('/jobDetails', [CompanyController::class, 'jobDetails'])->name('company.jobDetails');
-    Route::get('/jobPost', [CompanyController::class, 'jobPost'])->name('company.jobPost');
+    // Route::get('/jobList', [CompanyController::class, 'jobList'])->name('company.jobList');
+    // Route::get('/jobDetails', [CompanyController::class, 'jobDetails'])->name('company.jobDetails');
+    // Route::get('/jobPost', [CompanyController::class, 'jobPost'])->name('company.jobPost');
+    Route::resource('/job', JobController::class);
 });
 
 require __DIR__ . '/auth.php';

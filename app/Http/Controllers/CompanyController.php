@@ -17,35 +17,18 @@ class CompanyController extends Controller
         return view('company.dashboard', $data);
     }
 
-    public function jobList()
-    {
-        $data['title'] = 'Job List';
-        return view('company.jobList', $data);
-    }
-
     public function profile()
     {
         $data['title'] = 'Profile';
         return view('company.profile', $data);
     }
 
-//    public function settings()
-//    {
-//        $data['title'] = 'Settings';
-//        return view('company.settings', $data);
-//    }
+    //    public function settings()
+    //    {
+    //        $data['title'] = 'Settings';
+    //        return view('company.settings', $data);
+    //    }
 
-    public function jobDetails()
-    {
-        $data['title'] = 'Job Details';
-        return view('company.jobDetails', $data);
-    }
-
-    public function jobPost()
-    {
-        $data['title'] = 'jobPost';
-        return view('company.jobPost', $data);
-    }
 
     /**
      * Show the form for creating a new resource.

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('type');
-// develop
+            // develop
             $table->string('location');
             $table->string('category');
             $table->string('website');
@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('linkedin_link');
             $table->string('logo');
             $table->string('banner');
-// develop
+            // develop
             $table->timestamps();
         });
     }

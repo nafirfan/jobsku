@@ -1,728 +1,357 @@
-@extends('included.homeTemplate')
+@extends('included.companyTemplate')
 
 @section('content')
-    <div class="job-listing-area pt-120 mb-120">
+    <div class="dashboard-area company-dashboard pt-120 mb-120">
         <div class="container">
-            <div class="row g-lg-4 gy-4">
-                <div class="col-lg-4 order-lg-1 order-2">
-                    <div class="job-sidebar">
-                        <div class="job-widget style-1 mb-20">
-                            <div class="check-box-item">
-                                <h5 class="job-widget-title">Job Category</h5>
-                                <div class="checkbox-container">
-                                    <ul>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Health Care</span>
-                                                <span class="qty">(80)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Account & Finance</span>
-                                                <span class="qty">(80)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Transportation</span>
-                                                <span class="qty">(100)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Medical & Finance</span>
-                                                <span class="qty">(120)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Development</span>
-                                                <span class="qty">(30)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Engineering</span>
-                                                <span class="qty">(10)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Receptionist</span>
-                                                <span class="qty">(70)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Non-Profit Org.</span>
-                                                <span class="qty">(100)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Health Care</span>
-                                                <span class="qty">(80)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Account & Finance</span>
-                                                <span class="qty">(80)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Transportation</span>
-                                                <span class="qty">(100)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Medical & Finance</span>
-                                                <span class="qty">(120)</span>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
+            <div class="row">
+                @include('included.companyTopbar')
+                <div class="col-lg-12">
+                    <div class="table-wrapper2">
+                        <div class="title-and-btn">
+                            <div class="title">
+                                <h4>Latest Job List:</h4>
                             </div>
+                            {{-- <div class="job-post-btn">
+                                <a class="primry-btn-2" href="{{ route('jobCompany.create') }}">Create Job Post</a>
+                            </div> --}}
                         </div>
-                        <div class="job-widget mb-20">
-                            <div class="check-box-item">
-                                <h5 class="job-widget-title">Type of Employments</h5>
-                                <div class="checkbox-container">
-                                    <ul>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Full Time</span>
-                                                <span class="qty">(30)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Freelance</span>
-                                                <span class="qty">(10)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Part Time</span>
-                                                <span class="qty">(100)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Remote</span>
-                                                <span class="qty">(60)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Temporary</span>
-                                                <span class="qty">(40)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Permanent</span>
-                                                <span class="qty">(30)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Internship</span>
-                                                <span class="qty">(80)</span>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="job-widget mb-20">
-                            <div class="check-box-item">
-                                <h5 class="job-widget-title">Date of Post</h5>
-                                <div class="checkbox-container">
-                                    <ul>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Today</span>
-                                                <span class="qty">(80)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Last week ago</span>
-                                                <span class="qty">(100)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">Last month ago</span>
-                                                <span class="qty">(100)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">3 month ago</span>
-                                                <span class="qty">(30)</span>
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="containerss">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                                <span class="text">1 year ago</span>
-                                                <span class="qty">(30)</span>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="job-widget mb-20">
-                            <div class="check-box-item">
-                                <h5 class="job-widget-title mb-15">Salary Range</h5>
-                                <div class="range-wrap">
-                                    <div class="slider-labels">
-                                        <div class="caption">
-                                            <span id="slider-range-value1"></span>K
-                                        </div>
-                                        -
-                                        <div class="text-right caption">
-                                            <span id="slider-range-value2"></span>K
+                        <div class="table-filter-area mb-30">
+                            <form>
+                                <div class="form-wrap style-2 style-3">
+                                    <div class="form-inner">
+                                        <div class="input-area">
+                                            <img src="../assets/images/icon/search-2.svg" alt="">
+                                            <input type="text" id="jobtitle" name="jobtitle"
+                                                placeholder="Search by job title">
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <form>
-                                                <input type="hidden" name="min-value" value="">
-                                                <input type="hidden" name="max-value" value="">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div id="slider-range"></div>
+                                    <button class="primry-btn-1" type="submit">Search</button>
+                                </div>
+                                <div class="form-wrap style-3">
+                                    <div class="form-inner">
+                                        <div class="input-area">
+                                            <img src="../assets/images/icon/calender2.svg" alt="">
+                                            <input type="text" id="datepicker11" placeholder="Search by date">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="salary-container">
-                                    <ul>
-                                        <li>
-                                            <input class="form-check-input" type="radio" id="salary-1"
-                                                name="showInputBox" value="salary-1">
-                                            <div class="content">
-                                                <span class="text">$5K-$15K</span>
-                                                <span class="qty">(80)</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <input class="form-check-input" type="radio" id="salary-2"
-                                                name="showInputBox" value="salary-2">
-                                            <div class="content">
-                                                <span class="text">$20K-$30K</span>
-                                                <span class="qty">(100)</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <input class="form-check-input" type="radio" id="salary-3"
-                                                name="showInputBox" value="salary-3">
-                                            <div class="content">
-                                                <span class="text">$35K-$50K</span>
-                                                <span class="qty">(100)</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <input class="form-check-input" type="radio" id="salary-4"
-                                                name="showInputBox" value="salary-4">
-                                            <div class="content">
-                                                <span class="text">$55K-$70K</span>
-                                                <span class="qty">(120)</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <input class="form-check-input" type="radio" id="salary-5"
-                                                name="showInputBox" value="salary-5">
-                                            <div class="content">
-                                                <span class="text">$75K-$100K</span>
-                                                <span class="qty">(30)</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="job-widget mb-20">
-                            <div class="check-box-item">
-                                <h5 class="job-widget-title mb-10">Date of Post</h5>
-                                <ul class="tags">
-                                    <li><a href="job-listing2.html">Technology,</a></li>
-                                    <li><a href="job-listing2.html">Marketing,</a></li>
-                                    <li><a href="job-listing2.html">Sales,</a></li>
-                                    <li><a href="job-listing2.html">Transport,</a></li>
-                                    <li><a href="job-listing2.html">Medical,</a></li>
-                                    <li><a href="job-listing2.html">Design,</a></li>
-                                    <li><a href="job-listing2.html">Data Analyst,</a></li>
-                                    <li><a href="job-listing2.html">Development,</a></li>
-                                    <li><a href="job-listing2.html">Non-Profit,</a></li>
-                                    <li><a href="job-listing2.html">Manager,</a></li>
-                                    <li><a href="job-listing2.html">Health,</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="job-widget-btn">
-                            <a class="primry-btn-2 lg-btn text-center" href="#">Go to Job Alert</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8 order-lg-2 order-1">
-                    <div class="job-listing-wrrap">
-                        <div class="row g-4 mb-25">
-                            <div class="col-lg-6 d-flex align-items-center">
-                                <p class="show-item">Showing results 10 in 200 jobs list</p>
-                            </div>
-                            <div class="col-lg-6 d-flex align-items-center justify-content-lg-end">
-                                <div class="grid-select-area">
-                                    <div class="select-area">
-                                        <select class="select1">
-                                            <option value="0">Sort By(Default)</option>
-                                            <option value="1">Full Time</option>
-                                            <option value="2">Part Time</option>
-                                            <option value="3">Remote</option>
-                                            <option value="3">Internship</option>
-                                            <option value="3">Freelance</option>
-                                        </select>
+                                <div class="form-wrap">
+                                    <div class="form-inner">
+                                        <p>Show er page</p>
+                                        <div class="select-area">
+                                            <select class="select1">
+                                                <option>05</option>
+                                                <option>10</option>
+                                                <option>15</option>
+                                                <option>20</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="grid-area">
-                                        <ul>
-                                            <li><a class="active" href="job-listing2.html">
-                                                    <svg width="16" height="16" viewBox="0 0 16 16"
+                                </div>
+                            </form>
+                        </div>
+                        <table class="eg-table table job-list-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Job Title</th>
+                                    <th>Applications</th>
+                                    <th>Matched</th>
+                                    <th>Shortlisted</th>
+                                    <th>Viewed</th>
+                                    <th>Not Viewed</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Job Title">
+                                        <div class="job-content">
+                                            <h5><a href="job-details-for-company.html">Manager- Account & Finance</a></h5>
+                                            <p><img src="../assets/images/icon/calender2.svg"
+                                                    alt=""><span>Deadline:</span> 02 April, 2023</p>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox"
+                                                    id="flexSwitchCheckDefault1">
+                                                Live
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Applications">
+                                        <span class="total-number">1000</span>
+                                    </td>
+                                    <td data-label="Matched">
+                                        <span class="total-number light-orange">400</span>
+                                    </td>
+                                    <td data-label="Shortlisted">
+                                        <span class="total-number">700</span>
+                                    </td>
+                                    <td data-label="Viewed">
+                                        <span class="total-number light-yellow">300</span>
+                                    </td>
+                                    <td data-label="Not Viewed">
+                                        <span class="total-number deep-pink">100</span>
+                                    </td>
+                                    <td data-label="Action">
+                                        <ul class="action-btn-group2">
+                                            <li><a href="job-details-for-company.html"
+                                                    class="primry-btn-2  eg-btn green--btn">
+                                                    <svg width="14" height="10" viewBox="0 0 14 10"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path
-                                                            d="M6.26106 6.95674H0.695674C0.311464 6.95674 0 6.64527 0 6.26106V0.695674C0 0.311464 0.311464 0 0.695674 0H6.26106C6.64527 0 6.95674 0.311464 6.95674 0.695674V6.26106C6.95674 6.64527 6.64527 6.95674 6.26106 6.95674Z" />
+                                                            d="M14 5C14 5 11.375 0 7 0C2.625 0 0 5 0 5C0 5 2.625 10 7 10C11.375 10 14 5 14 5ZM1.02637 5C1.44945 4.33193 1.93606 3.70971 2.47887 3.14273C3.605 1.97091 5.145 0.909091 7 0.909091C8.855 0.909091 10.3941 1.97091 11.522 3.14273C12.0648 3.70971 12.5514 4.33193 12.9745 5C12.9237 5.07909 12.8678 5.16636 12.8039 5.26182C12.5108 5.69818 12.0776 6.28 11.522 6.85727C10.3941 8.02909 8.85413 9.09091 7 9.09091C5.145 9.09091 3.60588 8.02909 2.478 6.85727C1.93519 6.29028 1.44946 5.66807 1.02637 5Z" />
                                                         <path
-                                                            d="M15.304 6.95674H9.73864C9.35443 6.95674 9.04297 6.64527 9.04297 6.26106V0.695674C9.04297 0.311464 9.35443 0 9.73864 0H15.304C15.6882 0 15.9997 0.311464 15.9997 0.695674V6.26106C15.9997 6.64527 15.6882 6.95674 15.304 6.95674Z" />
-                                                        <path
-                                                            d="M6.26106 16.0004H0.695674C0.311464 16.0004 0 15.689 0 15.3048V9.73937C0 9.35517 0.311464 9.0437 0.695674 9.0437H6.26106C6.64527 9.0437 6.95674 9.35517 6.95674 9.73937V15.3048C6.95674 15.689 6.64527 16.0004 6.26106 16.0004Z" />
-                                                        <path
-                                                            d="M15.304 16.0004H9.73864C9.35443 16.0004 9.04297 15.689 9.04297 15.3048V9.73937C9.04297 9.35517 9.35443 9.0437 9.73864 9.0437H15.304C15.6882 9.0437 15.9997 9.35517 15.9997 9.73937V15.3048C15.9997 15.689 15.6882 16.0004 15.304 16.0004Z" />
+                                                            d="M7 2.72721C6.41984 2.72721 5.86344 2.96665 5.4532 3.39287C5.04297 3.81909 4.8125 4.39717 4.8125 4.99993C4.8125 5.6027 5.04297 6.18078 5.4532 6.60699C5.86344 7.03321 6.41984 7.27266 7 7.27266C7.58016 7.27266 8.13656 7.03321 8.5468 6.60699C8.95703 6.18078 9.1875 5.6027 9.1875 4.99993C9.1875 4.39717 8.95703 3.81909 8.5468 3.39287C8.13656 2.96665 7.58016 2.72721 7 2.72721ZM3.9375 4.99993C3.9375 4.15606 4.26016 3.34676 4.83449 2.75005C5.40882 2.15334 6.18777 1.81812 7 1.81812C7.81223 1.81812 8.59118 2.15334 9.16551 2.75005C9.73984 3.34676 10.0625 4.15606 10.0625 4.99993C10.0625 5.8438 9.73984 6.65311 9.16551 7.24982C8.59118 7.84652 7.81223 8.18175 7 8.18175C6.18777 8.18175 5.40882 7.84652 4.83449 7.24982C4.26016 6.65311 3.9375 5.8438 3.9375 4.99993Z" />
                                                     </svg>
                                                 </a></li>
-                                            <li><a href="job-listing1.html">
-                                                    <svg width="22" height="16" viewBox="0 0 22 16"
+                                            <li><a href="job-post.html" class="primry-btn-2 eg-btn sky--btn">
+                                                    <svg width="12" height="12" viewBox="0 0 12 12"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path
-                                                            d="M1.91313 0C0.856731 0 0 0.893707 0 1.99656C0 3.09861 0.856731 3.99157 1.91313 3.99157C2.96953 3.99157 3.82626 3.09861 3.82626 1.99656C3.82626 0.893707 2.96953 0 1.91313 0Z" />
-                                                        <path
-                                                            d="M1.91313 6.00464C0.856731 6.00464 0 6.8976 0 8.00045C0 9.1025 0.856731 9.99621 1.91313 9.99621C2.96953 9.99621 3.82626 9.1025 3.82626 8.00045C3.82626 6.8976 2.96953 6.00464 1.91313 6.00464Z" />
-                                                        <path
-                                                            d="M1.91313 12.0085C0.856731 12.0085 0 12.9023 0 14.0043C0 15.1064 0.856731 16.0001 1.91313 16.0001C2.96953 16.0001 3.82626 15.1064 3.82626 14.0043C3.82626 12.9023 2.96953 12.0085 1.91313 12.0085Z" />
-                                                        <path
-                                                            d="M20.561 0.495117H6.95229C6.15787 0.495117 5.51367 1.16716 5.51367 1.99665C5.51367 2.82545 6.15782 3.49744 6.95229 3.49744H20.561C21.3554 3.49744 21.9996 2.82545 21.9996 1.99665C21.9996 1.16716 21.3554 0.495117 20.561 0.495117Z" />
-                                                        <path
-                                                            d="M20.561 6.49878H6.95229C6.15787 6.49878 5.51367 7.17077 5.51367 8.00032C5.51367 8.82911 6.15782 9.5011 6.95229 9.5011H20.561C21.3554 9.5011 21.9996 8.82911 21.9996 8.00032C21.9996 7.17077 21.3554 6.49878 20.561 6.49878Z" />
-                                                        <path
-                                                            d="M20.561 12.5034H6.95229C6.15787 12.5034 5.51367 13.1754 5.51367 14.0042C5.51367 14.833 6.15782 15.5049 6.95229 15.5049H20.561C21.3554 15.5049 21.9996 14.833 21.9996 14.0042C21.9996 13.1754 21.3554 12.5034 20.561 12.5034Z" />
+                                                            d="M11.8798 1.19201C11.9563 1.26957 11.9993 1.37462 11.9993 1.48414C11.9993 1.59365 11.9563 1.6987 11.8798 1.77627L11.0253 2.64024L9.3868 0.98512L10.2413 0.121149C10.3181 0.0435774 10.4223 0 10.5309 0C10.6395 0 10.7437 0.0435774 10.8205 0.121149L11.8798 1.19118V1.19201ZM10.4461 3.22449L8.8076 1.56938L3.22607 7.20836C3.18098 7.2539 3.14704 7.30944 3.12694 7.37056L2.46745 9.36829C2.45549 9.40471 2.45379 9.44377 2.46254 9.48111C2.4713 9.51844 2.49016 9.55259 2.51702 9.57972C2.54388 9.60685 2.57768 9.62591 2.61464 9.63475C2.65161 9.64359 2.69028 9.64188 2.72633 9.62979L4.70399 8.96361C4.76442 8.94355 4.8194 8.90955 4.86456 8.8643L10.4461 3.22532V3.22449Z">
+                                                        </path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M0 10.7585C0 11.0878 0.12947 11.4035 0.359928 11.6363C0.590385 11.8691 0.902953 11.9999 1.22887 11.9999H10.2406C10.5665 11.9999 10.8791 11.8691 11.1095 11.6363C11.34 11.4035 11.4694 11.0878 11.4694 10.7585V5.79319C11.4694 5.68345 11.4263 5.5782 11.3495 5.50061C11.2727 5.42301 11.1685 5.37941 11.0598 5.37941C10.9512 5.37941 10.847 5.42301 10.7702 5.50061C10.6934 5.5782 10.6502 5.68345 10.6502 5.79319V10.7585C10.6502 10.8683 10.607 10.9735 10.5302 11.0511C10.4534 11.1287 10.3492 11.1723 10.2406 11.1723H1.22887C1.12023 11.1723 1.01604 11.1287 0.939222 11.0511C0.862403 10.9735 0.819246 10.8683 0.819246 10.7585V1.6554C0.819246 1.54566 0.862403 1.44041 0.939222 1.36281C1.01604 1.28522 1.12023 1.24162 1.22887 1.24162H6.55397C6.66261 1.24162 6.7668 1.19803 6.84362 1.12043C6.92044 1.04283 6.96359 0.937583 6.96359 0.827842C6.96359 0.718101 6.92044 0.612854 6.84362 0.535256C6.7668 0.457657 6.66261 0.414063 6.55397 0.414062H1.22887C0.902953 0.414063 0.590385 0.544846 0.359928 0.777642C0.12947 1.01044 0 1.32618 0 1.6554V10.7585Z">
+                                                        </path>
                                                     </svg>
                                                 </a></li>
                                         </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row g-4 mb-70">
-                            <div class="col-md-6">
-                                <div class="job-listing-card2">
-                                    <div class="job-thumb">
-                                        <img class="img-fluid" src="../assets/images/bg/job-list-1.png" alt="">
-                                        <div class="bookmark">
-                                            <i class="bi bi-bookmark"></i>
-                                        </div>
-                                    </div>
-                                    <div class="job-content">
-                                        <div class="company-area">
-                                            <div class="logo">
-                                                <img src="../assets/images/bg/company-logo/company-01.png" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="name-location">
-                                                    <h5><a href="job-details.html">WordPress Developer</a></h5>
-                                                    <ul>
-                                                        <li>
-                                                            <p><a href="company-details.html">Bistro Tech Ltd</a></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><span class="title">Deadline:</span> 2 April, 2023</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Job Title">
+                                        <div class="job-content">
+                                            <h5><a href="job-details-for-company.html">Assistant Laboratorist</a></h5>
+                                            <p><img src="../assets/images/icon/calender2.svg"
+                                                    alt=""><span>Deadline:</span> 02 April, 2023</p>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault2"
+                                                    checked>
+                                                Live
                                             </div>
                                         </div>
-                                        <div class="job-discription">
-                                            <ul>
-                                                <li>
-                                                    <p><span class="title">Salary:</span> $60-$90 / <span
-                                                            class="time">Per Hour</span></p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Experience:</span> 3-3.5 Years</p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Location:</span> Dhaka, Bangladesh</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="job-type-apply">
-                                            <div class="job-type">
-                                                <span class="light-green">Full Time</span>
-                                            </div>
-                                            <div class="apply-btn">
-                                                <a href="job-details.html"><span><img
-                                                            src="../assets/images/icon/apply-ellipse.svg"
-                                                            alt=""></span>Apply Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="job-listing-card2">
-                                    <div class="job-thumb">
-                                        <img class="img-fluid" src="../assets/images/bg/job-list-2.png" alt="">
-                                        <div class="bookmark">
-                                            <i class="bi bi-bookmark"></i>
-                                        </div>
-                                    </div>
-                                    <div class="job-content">
-                                        <div class="company-area">
-                                            <div class="logo">
-                                                <img src="../assets/images/bg/company-logo/company-02.png" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="name-location">
-                                                    <h5><a href="job-details.html">Assistant Manager</a></h5>
-                                                    <ul>
-                                                        <li>
-                                                            <p><a href="company-details.html">Hangman Gold</a></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><span class="title">Deadline:</span> 3 April, 2023</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="job-discription">
-                                            <ul>
-                                                <li>
-                                                    <p><span class="title">Salary:</span> $20k-$50k / <span
-                                                            class="time">Per Hour</span></p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Experience:</span> 2-2.5 Years</p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Location:</span> Sylhet, Bangladesh</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="job-type-apply">
-                                            <div class="job-type">
-                                                <span class="light-green">Full Time</span>
-                                            </div>
-                                            <div class="apply-btn">
-                                                <a href="job-details.html"><span><img
-                                                            src="../assets/images/icon/apply-ellipse.svg"
-                                                            alt=""></span>Apply Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="job-listing-card2">
-                                    <div class="job-thumb">
-                                        <img class="img-fluid" src="../assets/images/bg/job-list-3.png" alt="">
-                                        <div class="bookmark">
-                                            <i class="bi bi-bookmark"></i>
-                                        </div>
-                                    </div>
-                                    <div class="job-content">
-                                        <div class="company-area">
-                                            <div class="logo">
-                                                <img src="../assets/images/bg/company-logo/company-03.png" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="name-location">
-                                                    <h5><a href="job-details.html">UI/UX Designer</a></h5>
-                                                    <ul>
-                                                        <li>
-                                                            <p><a href="company-details.html">Tech-Bath IT Ltd</a></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><span class="title">Deadline:</span> 5 April, 2023</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="job-discription">
-                                            <ul>
-                                                <li>
-                                                    <p><span class="title">Salary:</span> $50K-$90K / <span
-                                                            class="time">Per Month</span></p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Experience:</span> 2-3 Years</p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Location:</span> Chicago, Australia</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="job-type-apply">
-                                            <div class="job-type">
-                                                <span class="light-blue">Part Time</span>
-                                            </div>
-                                            <div class="apply-btn">
-                                                <a href="job-details.html"><span><img
-                                                            src="../assets/images/icon/apply-ellipse.svg"
-                                                            alt=""></span>Apply Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="job-listing-card2">
-                                    <div class="job-thumb">
-                                        <img class="img-fluid" src="../assets/images/bg/job-list-4.png" alt="">
-                                        <div class="urgent-batch">
-                                            <span>Urgent</span>
-                                        </div>
-                                        <div class="bookmark">
-                                            <i class="bi bi-bookmark"></i>
-                                        </div>
-                                    </div>
-                                    <div class="job-content">
-                                        <div class="company-area">
-                                            <div class="logo">
-                                                <img src="../assets/images/bg/company-logo/company-04.png" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="name-location">
-                                                    <h5><a href="job-details.html">Junior Receptionist</a></h5>
-                                                    <ul>
-                                                        <li>
-                                                            <p><a href="company-details.html">Gangster.Hide</a></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><span class="title">Deadline:</span> 6 April, 2023</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="job-discription">
-                                            <ul>
-                                                <li>
-                                                    <p><span class="title">Salary:</span> $60-$80 / <span
-                                                            class="time">Per Hour</span></p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Experience:</span> 1-1.5 Years</p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Location:</span> Dhaka, Bangladesh</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="job-type-apply">
-                                            <div class="job-type">
-                                                <span class="light-blue">Part Time</span>
-                                            </div>
-                                            <div class="apply-btn">
-                                                <a href="job-details.html"><span><img
-                                                            src="../assets/images/icon/apply-ellipse.svg"
-                                                            alt=""></span>Apply Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="job-listing-card2">
-                                    <div class="job-thumb">
-                                        <img class="img-fluid" src="../assets/images/bg/job-list-5.png" alt="">
-                                        <div class="bookmark">
-                                            <i class="bi bi-bookmark"></i>
-                                        </div>
-                                    </div>
-                                    <div class="job-content">
-                                        <div class="company-area">
-                                            <div class="logo">
-                                                <img src="../assets/images/bg/company-logo/company-05.png" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="name-location">
-                                                    <h5><a href="job-details.html">Senior Laboratoriest</a></h5>
-                                                    <ul>
-                                                        <li>
-                                                            <p><a href="company-details.html">Laballo.Lab Ltd</a></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><span class="title">Deadline:</span> 9 April, 2023</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="job-discription">
-                                            <ul>
-                                                <li>
-                                                    <p><span class="title">Salary:</span> $40K-$60K / <span
-                                                            class="time">Per Month</span></p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Experience:</span> 3-4 Years</p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Location:</span> New-York, USA</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="job-type-apply">
-                                            <div class="job-type">
-                                                <span class="light-green">Full Time</span>
-                                            </div>
-                                            <div class="apply-btn">
-                                                <a href="job-details.html"><span><img
-                                                            src="../assets/images/icon/apply-ellipse.svg"
-                                                            alt=""></span>Apply Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="job-listing-card2">
-                                    <div class="job-thumb">
-                                        <img class="img-fluid" src="../assets/images/bg/job-list-6.png" alt="">
-                                        <div class="urgent-batch">
-                                            <span>Urgent</span>
-                                        </div>
-                                        <div class="bookmark">
-                                            <i class="bi bi-bookmark"></i>
-                                        </div>
-                                    </div>
-                                    <div class="job-content">
-                                        <div class="company-area">
-                                            <div class="logo">
-                                                <img src="../assets/images/bg/company-logo/company-06.png" alt="">
-                                            </div>
-                                            <div class="company-details">
-                                                <div class="name-location">
-                                                    <h5><a href="job-details.html">Medical Nurse</a></h5>
-                                                    <ul>
-                                                        <li>
-                                                            <p><a href="company-details.html">Marko Company</a></p>
-                                                        </li>
-                                                        <li>
-                                                            <p><span class="title">Deadline:</span> 9 April, 2023</p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="job-discription">
-                                            <ul>
-                                                <li>
-                                                    <p><span class="title">Salary:</span> $60-$90 / <span
-                                                            class="time">Per Hour</span></p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Experience:</span> 3-3.5 Years</p>
-                                                </li>
-                                                <li>
-                                                    <p><span class="title">Location:</span> Dhaka, Bangladesh</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="job-type-apply">
-                                            <div class="job-type">
-                                                <span class="light-green">Part Time</span>
-                                            </div>
-                                            <div class="apply-btn">
-                                                <a href="job-details.html"><span><img
-                                                            src="../assets/images/icon/apply-ellipse.svg"
-                                                            alt=""></span>Apply Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 d-flex justify-content-center">
-                                <div class="pagination-area">
-                                    <nav aria-label="...">
-                                        <ul class="pagination">
-                                            <li class="page-item disabled"><a class="page-link" href="#"
-                                                    tabindex="-1"></a></li>
-                                            <li class="page-item active" aria-current="page"><a class="page-link"
-                                                    href="#">01</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                            <li class="page-item"><a class="page-link" href="#"></a></li>
+                                    </td>
+                                    <td data-label="Applications">
+                                        <span class="total-number">1000</span>
+                                    </td>
+                                    <td data-label="Matched">
+                                        <span class="total-number light-orange">400</span>
+                                    </td>
+                                    <td data-label="Shortlisted">
+                                        <span class="total-number">700</span>
+                                    </td>
+                                    <td data-label="Viewed">
+                                        <span class="total-number light-yellow">300</span>
+                                    </td>
+                                    <td data-label="Not Viewed">
+                                        <span class="total-number deep-pink">100</span>
+                                    </td>
+                                    <td data-label="Action">
+                                        <ul class="action-btn-group2">
+                                            <li><a href="job-details-for-company.html"
+                                                    class="primry-btn-2  eg-btn green--btn">
+                                                    <svg width="14" height="10" viewBox="0 0 14 10"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M14 5C14 5 11.375 0 7 0C2.625 0 0 5 0 5C0 5 2.625 10 7 10C11.375 10 14 5 14 5ZM1.02637 5C1.44945 4.33193 1.93606 3.70971 2.47887 3.14273C3.605 1.97091 5.145 0.909091 7 0.909091C8.855 0.909091 10.3941 1.97091 11.522 3.14273C12.0648 3.70971 12.5514 4.33193 12.9745 5C12.9237 5.07909 12.8678 5.16636 12.8039 5.26182C12.5108 5.69818 12.0776 6.28 11.522 6.85727C10.3941 8.02909 8.85413 9.09091 7 9.09091C5.145 9.09091 3.60588 8.02909 2.478 6.85727C1.93519 6.29028 1.44946 5.66807 1.02637 5Z" />
+                                                        <path
+                                                            d="M7 2.72721C6.41984 2.72721 5.86344 2.96665 5.4532 3.39287C5.04297 3.81909 4.8125 4.39717 4.8125 4.99993C4.8125 5.6027 5.04297 6.18078 5.4532 6.60699C5.86344 7.03321 6.41984 7.27266 7 7.27266C7.58016 7.27266 8.13656 7.03321 8.5468 6.60699C8.95703 6.18078 9.1875 5.6027 9.1875 4.99993C9.1875 4.39717 8.95703 3.81909 8.5468 3.39287C8.13656 2.96665 7.58016 2.72721 7 2.72721ZM3.9375 4.99993C3.9375 4.15606 4.26016 3.34676 4.83449 2.75005C5.40882 2.15334 6.18777 1.81812 7 1.81812C7.81223 1.81812 8.59118 2.15334 9.16551 2.75005C9.73984 3.34676 10.0625 4.15606 10.0625 4.99993C10.0625 5.8438 9.73984 6.65311 9.16551 7.24982C8.59118 7.84652 7.81223 8.18175 7 8.18175C6.18777 8.18175 5.40882 7.84652 4.83449 7.24982C4.26016 6.65311 3.9375 5.8438 3.9375 4.99993Z" />
+                                                    </svg>
+                                                </a></li>
+                                            <li><a href="job-post.html" class="primry-btn-2 eg-btn sky--btn">
+                                                    <svg width="12" height="12" viewBox="0 0 12 12"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M11.8798 1.19201C11.9563 1.26957 11.9993 1.37462 11.9993 1.48414C11.9993 1.59365 11.9563 1.6987 11.8798 1.77627L11.0253 2.64024L9.3868 0.98512L10.2413 0.121149C10.3181 0.0435774 10.4223 0 10.5309 0C10.6395 0 10.7437 0.0435774 10.8205 0.121149L11.8798 1.19118V1.19201ZM10.4461 3.22449L8.8076 1.56938L3.22607 7.20836C3.18098 7.2539 3.14704 7.30944 3.12694 7.37056L2.46745 9.36829C2.45549 9.40471 2.45379 9.44377 2.46254 9.48111C2.4713 9.51844 2.49016 9.55259 2.51702 9.57972C2.54388 9.60685 2.57768 9.62591 2.61464 9.63475C2.65161 9.64359 2.69028 9.64188 2.72633 9.62979L4.70399 8.96361C4.76442 8.94355 4.8194 8.90955 4.86456 8.8643L10.4461 3.22532V3.22449Z">
+                                                        </path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M0 10.7585C0 11.0878 0.12947 11.4035 0.359928 11.6363C0.590385 11.8691 0.902953 11.9999 1.22887 11.9999H10.2406C10.5665 11.9999 10.8791 11.8691 11.1095 11.6363C11.34 11.4035 11.4694 11.0878 11.4694 10.7585V5.79319C11.4694 5.68345 11.4263 5.5782 11.3495 5.50061C11.2727 5.42301 11.1685 5.37941 11.0598 5.37941C10.9512 5.37941 10.847 5.42301 10.7702 5.50061C10.6934 5.5782 10.6502 5.68345 10.6502 5.79319V10.7585C10.6502 10.8683 10.607 10.9735 10.5302 11.0511C10.4534 11.1287 10.3492 11.1723 10.2406 11.1723H1.22887C1.12023 11.1723 1.01604 11.1287 0.939222 11.0511C0.862403 10.9735 0.819246 10.8683 0.819246 10.7585V1.6554C0.819246 1.54566 0.862403 1.44041 0.939222 1.36281C1.01604 1.28522 1.12023 1.24162 1.22887 1.24162H6.55397C6.66261 1.24162 6.7668 1.19803 6.84362 1.12043C6.92044 1.04283 6.96359 0.937583 6.96359 0.827842C6.96359 0.718101 6.92044 0.612854 6.84362 0.535256C6.7668 0.457657 6.66261 0.414063 6.55397 0.414062H1.22887C0.902953 0.414063 0.590385 0.544846 0.359928 0.777642C0.12947 1.01044 0 1.32618 0 1.6554V10.7585Z">
+                                                        </path>
+                                                    </svg>
+                                                </a></li>
                                         </ul>
-                                    </nav>
-                                </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Job Title">
+                                        <div class="job-content">
+                                            <h5><a href="job-details-for-company.html">Senior React Native </a></h5>
+                                            <p><img src="../assets/images/icon/calender2.svg"
+                                                    alt=""><span>Deadline:</span> 02 April, 2023</p>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox"
+                                                    id="flexSwitchCheckDefault3" checked>
+                                                Live
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Applications">
+                                        <span class="total-number">1000</span>
+                                    </td>
+                                    <td data-label="Matched">
+                                        <span class="total-number light-orange">400</span>
+                                    </td>
+                                    <td data-label="Shortlisted">
+                                        <span class="total-number">700</span>
+                                    </td>
+                                    <td data-label="Viewed">
+                                        <span class="total-number light-yellow">300</span>
+                                    </td>
+                                    <td data-label="Not Viewed">
+                                        <span class="total-number deep-pink">100</span>
+                                    </td>
+                                    <td data-label="Action">
+                                        <ul class="action-btn-group2">
+                                            <li><a href="job-details-for-company.html"
+                                                    class="primry-btn-2  eg-btn green--btn">
+                                                    <svg width="14" height="10" viewBox="0 0 14 10"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M14 5C14 5 11.375 0 7 0C2.625 0 0 5 0 5C0 5 2.625 10 7 10C11.375 10 14 5 14 5ZM1.02637 5C1.44945 4.33193 1.93606 3.70971 2.47887 3.14273C3.605 1.97091 5.145 0.909091 7 0.909091C8.855 0.909091 10.3941 1.97091 11.522 3.14273C12.0648 3.70971 12.5514 4.33193 12.9745 5C12.9237 5.07909 12.8678 5.16636 12.8039 5.26182C12.5108 5.69818 12.0776 6.28 11.522 6.85727C10.3941 8.02909 8.85413 9.09091 7 9.09091C5.145 9.09091 3.60588 8.02909 2.478 6.85727C1.93519 6.29028 1.44946 5.66807 1.02637 5Z" />
+                                                        <path
+                                                            d="M7 2.72721C6.41984 2.72721 5.86344 2.96665 5.4532 3.39287C5.04297 3.81909 4.8125 4.39717 4.8125 4.99993C4.8125 5.6027 5.04297 6.18078 5.4532 6.60699C5.86344 7.03321 6.41984 7.27266 7 7.27266C7.58016 7.27266 8.13656 7.03321 8.5468 6.60699C8.95703 6.18078 9.1875 5.6027 9.1875 4.99993C9.1875 4.39717 8.95703 3.81909 8.5468 3.39287C8.13656 2.96665 7.58016 2.72721 7 2.72721ZM3.9375 4.99993C3.9375 4.15606 4.26016 3.34676 4.83449 2.75005C5.40882 2.15334 6.18777 1.81812 7 1.81812C7.81223 1.81812 8.59118 2.15334 9.16551 2.75005C9.73984 3.34676 10.0625 4.15606 10.0625 4.99993C10.0625 5.8438 9.73984 6.65311 9.16551 7.24982C8.59118 7.84652 7.81223 8.18175 7 8.18175C6.18777 8.18175 5.40882 7.84652 4.83449 7.24982C4.26016 6.65311 3.9375 5.8438 3.9375 4.99993Z" />
+                                                    </svg>
+                                                </a></li>
+                                            <li><a href="job-post.html" class="primry-btn-2 eg-btn sky--btn">
+                                                    <svg width="12" height="12" viewBox="0 0 12 12"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M11.8798 1.19201C11.9563 1.26957 11.9993 1.37462 11.9993 1.48414C11.9993 1.59365 11.9563 1.6987 11.8798 1.77627L11.0253 2.64024L9.3868 0.98512L10.2413 0.121149C10.3181 0.0435774 10.4223 0 10.5309 0C10.6395 0 10.7437 0.0435774 10.8205 0.121149L11.8798 1.19118V1.19201ZM10.4461 3.22449L8.8076 1.56938L3.22607 7.20836C3.18098 7.2539 3.14704 7.30944 3.12694 7.37056L2.46745 9.36829C2.45549 9.40471 2.45379 9.44377 2.46254 9.48111C2.4713 9.51844 2.49016 9.55259 2.51702 9.57972C2.54388 9.60685 2.57768 9.62591 2.61464 9.63475C2.65161 9.64359 2.69028 9.64188 2.72633 9.62979L4.70399 8.96361C4.76442 8.94355 4.8194 8.90955 4.86456 8.8643L10.4461 3.22532V3.22449Z">
+                                                        </path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M0 10.7585C0 11.0878 0.12947 11.4035 0.359928 11.6363C0.590385 11.8691 0.902953 11.9999 1.22887 11.9999H10.2406C10.5665 11.9999 10.8791 11.8691 11.1095 11.6363C11.34 11.4035 11.4694 11.0878 11.4694 10.7585V5.79319C11.4694 5.68345 11.4263 5.5782 11.3495 5.50061C11.2727 5.42301 11.1685 5.37941 11.0598 5.37941C10.9512 5.37941 10.847 5.42301 10.7702 5.50061C10.6934 5.5782 10.6502 5.68345 10.6502 5.79319V10.7585C10.6502 10.8683 10.607 10.9735 10.5302 11.0511C10.4534 11.1287 10.3492 11.1723 10.2406 11.1723H1.22887C1.12023 11.1723 1.01604 11.1287 0.939222 11.0511C0.862403 10.9735 0.819246 10.8683 0.819246 10.7585V1.6554C0.819246 1.54566 0.862403 1.44041 0.939222 1.36281C1.01604 1.28522 1.12023 1.24162 1.22887 1.24162H6.55397C6.66261 1.24162 6.7668 1.19803 6.84362 1.12043C6.92044 1.04283 6.96359 0.937583 6.96359 0.827842C6.96359 0.718101 6.92044 0.612854 6.84362 0.535256C6.7668 0.457657 6.66261 0.414063 6.55397 0.414062H1.22887C0.902953 0.414063 0.590385 0.544846 0.359928 0.777642C0.12947 1.01044 0 1.32618 0 1.6554V10.7585Z">
+                                                        </path>
+                                                    </svg>
+                                                </a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Job Title">
+                                        <div class="job-content">
+                                            <h5><a href="job-details-for-company.html">Manager- Account & Finance</a></h5>
+                                            <p><img src="../assets/images/icon/calender2.svg"
+                                                    alt=""><span>Deadline:</span> 02 April, 2023</p>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox"
+                                                    id="flexSwitchCheckDefault4" checked>
+                                                Live
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Applications">
+                                        <span class="total-number">1000</span>
+                                    </td>
+                                    <td data-label="Matched">
+                                        <span class="total-number light-orange">400</span>
+                                    </td>
+                                    <td data-label="Shortlisted">
+                                        <span class="total-number">700</span>
+                                    </td>
+                                    <td data-label="Viewed">
+                                        <span class="total-number light-yellow">300</span>
+                                    </td>
+                                    <td data-label="Not Viewed">
+                                        <span class="total-number deep-pink">100</span>
+                                    </td>
+                                    <td data-label="Action">
+                                        <ul class="action-btn-group2">
+                                            <li><a href="job-details-for-company.html"
+                                                    class="primry-btn-2  eg-btn green--btn">
+                                                    <svg width="14" height="10" viewBox="0 0 14 10"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M14 5C14 5 11.375 0 7 0C2.625 0 0 5 0 5C0 5 2.625 10 7 10C11.375 10 14 5 14 5ZM1.02637 5C1.44945 4.33193 1.93606 3.70971 2.47887 3.14273C3.605 1.97091 5.145 0.909091 7 0.909091C8.855 0.909091 10.3941 1.97091 11.522 3.14273C12.0648 3.70971 12.5514 4.33193 12.9745 5C12.9237 5.07909 12.8678 5.16636 12.8039 5.26182C12.5108 5.69818 12.0776 6.28 11.522 6.85727C10.3941 8.02909 8.85413 9.09091 7 9.09091C5.145 9.09091 3.60588 8.02909 2.478 6.85727C1.93519 6.29028 1.44946 5.66807 1.02637 5Z" />
+                                                        <path
+                                                            d="M7 2.72721C6.41984 2.72721 5.86344 2.96665 5.4532 3.39287C5.04297 3.81909 4.8125 4.39717 4.8125 4.99993C4.8125 5.6027 5.04297 6.18078 5.4532 6.60699C5.86344 7.03321 6.41984 7.27266 7 7.27266C7.58016 7.27266 8.13656 7.03321 8.5468 6.60699C8.95703 6.18078 9.1875 5.6027 9.1875 4.99993C9.1875 4.39717 8.95703 3.81909 8.5468 3.39287C8.13656 2.96665 7.58016 2.72721 7 2.72721ZM3.9375 4.99993C3.9375 4.15606 4.26016 3.34676 4.83449 2.75005C5.40882 2.15334 6.18777 1.81812 7 1.81812C7.81223 1.81812 8.59118 2.15334 9.16551 2.75005C9.73984 3.34676 10.0625 4.15606 10.0625 4.99993C10.0625 5.8438 9.73984 6.65311 9.16551 7.24982C8.59118 7.84652 7.81223 8.18175 7 8.18175C6.18777 8.18175 5.40882 7.84652 4.83449 7.24982C4.26016 6.65311 3.9375 5.8438 3.9375 4.99993Z" />
+                                                    </svg>
+                                                </a></li>
+                                            <li><a href="job-post.html" class="primry-btn-2 eg-btn sky--btn">
+                                                    <svg width="12" height="12" viewBox="0 0 12 12"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M11.8798 1.19201C11.9563 1.26957 11.9993 1.37462 11.9993 1.48414C11.9993 1.59365 11.9563 1.6987 11.8798 1.77627L11.0253 2.64024L9.3868 0.98512L10.2413 0.121149C10.3181 0.0435774 10.4223 0 10.5309 0C10.6395 0 10.7437 0.0435774 10.8205 0.121149L11.8798 1.19118V1.19201ZM10.4461 3.22449L8.8076 1.56938L3.22607 7.20836C3.18098 7.2539 3.14704 7.30944 3.12694 7.37056L2.46745 9.36829C2.45549 9.40471 2.45379 9.44377 2.46254 9.48111C2.4713 9.51844 2.49016 9.55259 2.51702 9.57972C2.54388 9.60685 2.57768 9.62591 2.61464 9.63475C2.65161 9.64359 2.69028 9.64188 2.72633 9.62979L4.70399 8.96361C4.76442 8.94355 4.8194 8.90955 4.86456 8.8643L10.4461 3.22532V3.22449Z">
+                                                        </path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M0 10.7585C0 11.0878 0.12947 11.4035 0.359928 11.6363C0.590385 11.8691 0.902953 11.9999 1.22887 11.9999H10.2406C10.5665 11.9999 10.8791 11.8691 11.1095 11.6363C11.34 11.4035 11.4694 11.0878 11.4694 10.7585V5.79319C11.4694 5.68345 11.4263 5.5782 11.3495 5.50061C11.2727 5.42301 11.1685 5.37941 11.0598 5.37941C10.9512 5.37941 10.847 5.42301 10.7702 5.50061C10.6934 5.5782 10.6502 5.68345 10.6502 5.79319V10.7585C10.6502 10.8683 10.607 10.9735 10.5302 11.0511C10.4534 11.1287 10.3492 11.1723 10.2406 11.1723H1.22887C1.12023 11.1723 1.01604 11.1287 0.939222 11.0511C0.862403 10.9735 0.819246 10.8683 0.819246 10.7585V1.6554C0.819246 1.54566 0.862403 1.44041 0.939222 1.36281C1.01604 1.28522 1.12023 1.24162 1.22887 1.24162H6.55397C6.66261 1.24162 6.7668 1.19803 6.84362 1.12043C6.92044 1.04283 6.96359 0.937583 6.96359 0.827842C6.96359 0.718101 6.92044 0.612854 6.84362 0.535256C6.7668 0.457657 6.66261 0.414063 6.55397 0.414062H1.22887C0.902953 0.414063 0.590385 0.544846 0.359928 0.777642C0.12947 1.01044 0 1.32618 0 1.6554V10.7585Z">
+                                                        </path>
+                                                    </svg>
+                                                </a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Job Title">
+                                        <div class="job-content">
+                                            <h5><a href="job-details-for-company.html">WordPress Developer</a></h5>
+                                            <p><img src="../assets/images/icon/calender2.svg"
+                                                    alt=""><span>Deadline:</span> 02 April, 2023</p>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox"
+                                                    id="flexSwitchCheckDefault5" checked>
+                                                Live
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="Applications">
+                                        <span class="total-number">1000</span>
+                                    </td>
+                                    <td data-label="Matched">
+                                        <span class="total-number light-orange">400</span>
+                                    </td>
+                                    <td data-label="Shortlisted">
+                                        <span class="total-number">700</span>
+                                    </td>
+                                    <td data-label="Viewed">
+                                        <span class="total-number light-yellow">300</span>
+                                    </td>
+                                    <td data-label="Not Viewed">
+                                        <span class="total-number deep-pink">100</span>
+                                    </td>
+                                    <td data-label="Action">
+                                        <ul class="action-btn-group2">
+                                            <li><a href="job-details-for-company.html"
+                                                    class="primry-btn-2  eg-btn green--btn">
+                                                    <svg width="14" height="10" viewBox="0 0 14 10"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M14 5C14 5 11.375 0 7 0C2.625 0 0 5 0 5C0 5 2.625 10 7 10C11.375 10 14 5 14 5ZM1.02637 5C1.44945 4.33193 1.93606 3.70971 2.47887 3.14273C3.605 1.97091 5.145 0.909091 7 0.909091C8.855 0.909091 10.3941 1.97091 11.522 3.14273C12.0648 3.70971 12.5514 4.33193 12.9745 5C12.9237 5.07909 12.8678 5.16636 12.8039 5.26182C12.5108 5.69818 12.0776 6.28 11.522 6.85727C10.3941 8.02909 8.85413 9.09091 7 9.09091C5.145 9.09091 3.60588 8.02909 2.478 6.85727C1.93519 6.29028 1.44946 5.66807 1.02637 5Z" />
+                                                        <path
+                                                            d="M7 2.72721C6.41984 2.72721 5.86344 2.96665 5.4532 3.39287C5.04297 3.81909 4.8125 4.39717 4.8125 4.99993C4.8125 5.6027 5.04297 6.18078 5.4532 6.60699C5.86344 7.03321 6.41984 7.27266 7 7.27266C7.58016 7.27266 8.13656 7.03321 8.5468 6.60699C8.95703 6.18078 9.1875 5.6027 9.1875 4.99993C9.1875 4.39717 8.95703 3.81909 8.5468 3.39287C8.13656 2.96665 7.58016 2.72721 7 2.72721ZM3.9375 4.99993C3.9375 4.15606 4.26016 3.34676 4.83449 2.75005C5.40882 2.15334 6.18777 1.81812 7 1.81812C7.81223 1.81812 8.59118 2.15334 9.16551 2.75005C9.73984 3.34676 10.0625 4.15606 10.0625 4.99993C10.0625 5.8438 9.73984 6.65311 9.16551 7.24982C8.59118 7.84652 7.81223 8.18175 7 8.18175C6.18777 8.18175 5.40882 7.84652 4.83449 7.24982C4.26016 6.65311 3.9375 5.8438 3.9375 4.99993Z" />
+                                                    </svg>
+                                                </a></li>
+                                            <li><a href="job-post.html" class="primry-btn-2 eg-btn sky--btn">
+                                                    <svg width="12" height="12" viewBox="0 0 12 12"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M11.8798 1.19201C11.9563 1.26957 11.9993 1.37462 11.9993 1.48414C11.9993 1.59365 11.9563 1.6987 11.8798 1.77627L11.0253 2.64024L9.3868 0.98512L10.2413 0.121149C10.3181 0.0435774 10.4223 0 10.5309 0C10.6395 0 10.7437 0.0435774 10.8205 0.121149L11.8798 1.19118V1.19201ZM10.4461 3.22449L8.8076 1.56938L3.22607 7.20836C3.18098 7.2539 3.14704 7.30944 3.12694 7.37056L2.46745 9.36829C2.45549 9.40471 2.45379 9.44377 2.46254 9.48111C2.4713 9.51844 2.49016 9.55259 2.51702 9.57972C2.54388 9.60685 2.57768 9.62591 2.61464 9.63475C2.65161 9.64359 2.69028 9.64188 2.72633 9.62979L4.70399 8.96361C4.76442 8.94355 4.8194 8.90955 4.86456 8.8643L10.4461 3.22532V3.22449Z">
+                                                        </path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M0 10.7585C0 11.0878 0.12947 11.4035 0.359928 11.6363C0.590385 11.8691 0.902953 11.9999 1.22887 11.9999H10.2406C10.5665 11.9999 10.8791 11.8691 11.1095 11.6363C11.34 11.4035 11.4694 11.0878 11.4694 10.7585V5.79319C11.4694 5.68345 11.4263 5.5782 11.3495 5.50061C11.2727 5.42301 11.1685 5.37941 11.0598 5.37941C10.9512 5.37941 10.847 5.42301 10.7702 5.50061C10.6934 5.5782 10.6502 5.68345 10.6502 5.79319V10.7585C10.6502 10.8683 10.607 10.9735 10.5302 11.0511C10.4534 11.1287 10.3492 11.1723 10.2406 11.1723H1.22887C1.12023 11.1723 1.01604 11.1287 0.939222 11.0511C0.862403 10.9735 0.819246 10.8683 0.819246 10.7585V1.6554C0.819246 1.54566 0.862403 1.44041 0.939222 1.36281C1.01604 1.28522 1.12023 1.24162 1.22887 1.24162H6.55397C6.66261 1.24162 6.7668 1.19803 6.84362 1.12043C6.92044 1.04283 6.96359 0.937583 6.96359 0.827842C6.96359 0.718101 6.92044 0.612854 6.84362 0.535256C6.7668 0.457657 6.66261 0.414063 6.55397 0.414062H1.22887C0.902953 0.414063 0.590385 0.544846 0.359928 0.777642C0.12947 1.01044 0 1.32618 0 1.6554V10.7585Z">
+                                                        </path>
+                                                    </svg>
+                                                </a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagination-table-info">
+                            <div class="table-info">
+                                <span>06 Results Showing In 20 Jobs</span>
+                            </div>
+                            <div class="pagination-area">
+                                <nav aria-label="...">
+                                    <ul class="pagination">
+                                        <li class="page-item disabled"><a class="page-link" href="#"
+                                                tabindex="-1"></a>
+                                        </li>
+                                        <li class="page-item active" aria-current="page"><a class="page-link"
+                                                href="#">01</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">03</a></li>
+                                        <li class="page-item"><a class="page-link" href="#"></a></li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>

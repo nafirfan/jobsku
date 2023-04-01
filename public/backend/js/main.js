@@ -13,5 +13,8 @@ $(function(){$('input[name="showInputBox"]').on('click',function(){if($(this).va
 else if($(this).val()==='rangePrice'){$('#fixedPrice').hide();$('#rangePrice').show();}else{$('#fixedPrice').hide();$('#rangePrice').hide();}});$(".js-example-templating").select2({tags:true,placeholder:"Type Your Tag",});});$(function(){$("#summernote1").summernote();$("button#btnToggleStyle").on("click",function(e){e.preventDefault();var styleEle=$("style#fixed");if(styleEle.length==0)
 $("<style id=\"fixed\">.note-editor .dropdown-toggle::after { all: unset; } .note-editor .note-dropdown-menu { box-sizing: content-box; } .note-editor .note-modal-footer { box-sizing: content-box; }</style>").prependTo("body");else
 styleEle.remove();})})
+$(function(){$("#summernote2").summernote();$("button#btnToggleStyle").on("click",function(e){e.preventDefault();var styleEle=$("style#fixed");if(styleEle.length==0)
+$("<style id=\"fixed\">.note-editor .dropdown-toggle::after { all: unset; } .note-editor .note-dropdown-menu { box-sizing: content-box; } .note-editor .note-modal-footer { box-sizing: content-box; }</style>").prependTo("body");else
+styleEle.remove();})})
 if($('input[type="number').length){$('input[type="number"]').niceNumber({buttonDecrement:'<i class="bi bi-dash"></i>',buttonIncrement:'<i class="bi bi-plus"></i>',});}
 jQuery(window).on('load',function(){$(".eg-preloder").fadeOut("100");});}(jQuery));
