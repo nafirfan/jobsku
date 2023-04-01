@@ -43,17 +43,14 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
-
-        'Wasabi' => [
+        'wasabi' => [
             'driver' => 's3',
-            'key' => env('WASABI_ACCESS_KEY_ID'),
-            'secret' => env('WASABI_SECRET_ACCESS_KEY'),
-            'region' => env('WASABI_DEFAULT_REGION'),
-            'bucket' => env('WASABI_BUCKET'),
-            'url' => env('WASABI_URL'),
+            'key' => env('WAS_ACCESS_KEY_ID'),
+            'secret' => env('WAS_SECRET_ACCESS_KEY'),
+            'region' => env('WAS_DEFAULT_REGION'),
+            'bucket' => env('WAS_BUCKET'),
             'endpoint' => env('WASABI_ENDPOINT'),
-            'use_path_style_endpoint' => env('WASABI_USE_PATH_STYLE_ENDPOINT', false),
-            'throw' => false,
+            'url' => env('WAS_URL'),
         ],
 
         'WasabiPublic' => [

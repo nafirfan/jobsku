@@ -34,14 +34,22 @@ class ProfileController extends Controller
         }
 
         $img_profile = $request->file('img_profile');
-        $img_profile?->storeAs('jobsku/users/profiles', $img_profile->hashName() ,'Wasabi');
+        if($img_profile && $request->user()->img_profile === null){
+            // First time user is updating their img_profile
+            $img_profile->storePublicly('jobsku/users/profiles', 'wasabi');
+            $request->user()->img_profile = $img_profile->hashName();
+        }else if($img_profile && $request->user()->img_profile !== null) {
+            // User is updating their img_profile
+            Storage::disk('wasabi')->delete('jobsku/users/profiles/'.$request->user()->img_profile);
+            $img_profile->storePublicly('jobsku/users/profiles', 'wasabi');
+            $request->user()->img_profile = $img_profile->hashName();
+        }
 
         // Save the additional fields
         $request->user()->location = $request->location;
         $request->user()->phone = $request->phone;
         $request->user()->current_job = $request->current_job;
         $request->user()->designation = $request->designation;
-        $request->user()->img_profile = $img_profile->hashName();
         $request->user()->save();
 
         return redirect()->route('profile.edit')->with('status', 'Profile updated successfully!');
