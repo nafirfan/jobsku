@@ -33,6 +33,7 @@ class RegisteredUserController extends Controller
      */
     public function store(RegisterRequest $request): RedirectResponse
     {
+
         // develop
 
         $request->validate([
@@ -48,6 +49,10 @@ class RegisteredUserController extends Controller
         //
         if ($request->role == "1") {
             // develop
+=======
+        if($request->role == "1")
+        {
+
             $user = User::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
@@ -58,6 +63,7 @@ class RegisteredUserController extends Controller
             ]);
             event(new Registered($user));
             Auth::login($user);
+
 
             // develop
             return redirect(RouteServiceProvider::WELCOME);
@@ -74,6 +80,10 @@ class RegisteredUserController extends Controller
             //     );
             // } else if ($request->role == "2") {
             // develop
+=======
+            return redirect()->route('home.index')->with('status','Please confirm your email address before getting started.');
+        }else if ($request->role == "2")
+        {
             $user = User::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
@@ -84,8 +94,8 @@ class RegisteredUserController extends Controller
             ]);
 
             $company = Company::create([
-                'name' => $request->company_name,
-                'type' => $request->company_type,
+                'company_name' => $request->company_name,
+                'company_type' => $request->company_type,
                 'user_id' => $user->id,
             ]);
 
@@ -93,10 +103,14 @@ class RegisteredUserController extends Controller
             event(new CompanyRegistered($company));
             Auth::login($user);
 
+
             return redirect(
                 RouteServiceProvider::WELCOME,
                 with('Please confirm your email address before getting started.')
             );
+=======
+            return redirect()->route('home.index')->with('status','Please confirm your email address before getting started.');
+
         }
         return redirect('/register');
         // }
